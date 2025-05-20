@@ -1,0 +1,66 @@
+<footer>
+    <div class="company-info">
+        <h3>Despre Noi</h3>
+        <p><b>AutoNet</b> nu este responsabil pentru <s>eventuale erori</s> sau omisiuni.</p>
+        <p>Toate anunțurile sunt verificate conform <ins>regulilor</ins> platformei.</p>
+        <p>Unitatea de măsură: <abbr title="Litri la 100 de kilometri">L/100km</abbr>.</p>
+        <p>Termenul <dfn title="Vehicul utilizat anterior de cel puțin un proprietar">mașină second-hand</dfn>.</p>
+        <p><q>Orice vehicul vândut trebuie să fie în stare de funcționare.</q></p>
+        <small>© Creat pe <time datetime="1991-03-08">8 martie 1991</time> de AutoCazane (actual AutoNet)</small>
+        <a href="/resurse/PrincipiiAutonet.txt" download="PrincipiiAutonet">Descarca documentul Principii Autonet</a>
+    </div>
+
+    <div class="legal-links">
+        <h3>Informații Legale</h3>
+        <p><a href="/contact">Contactează-ne</a></p> <!-- Presupunem o rută /contact -->
+        <p><a href="/terms">Termeni și condiții</a></p> <!-- Presupunem o rută /terms -->
+        <p><a href="/privacy">Politica de confidențialitate</a></p> <!-- Presupunem o rută /privacy -->
+        <p><strong>Disclaimer:</strong> Toate informațiile prezentate pe acest site sunt oferite <em>cu titlu informativ</em>.</p>
+        <p>Copyright © 2025 AutoNet. Toate drepturile rezervate.</p>
+        <p id ="print-banner">Acesta este un proiect școlar!</p>
+        <p class="top-link"><a href="#">Du-te sus</a></p>
+    </div>
+
+    <div id = "contact" class="contact-info">
+        <h3>Contact</h3>
+        <address>
+            <p>Telefon: <a href="tel:+40712345678">+40 712 345 678</a> CEO Dinu Bogdan-Marius</p>
+            <p>Adresă: <a href="https://www.google.com/maps?q=44.43563889182432,26.0999836646027" target="_blank">Facultatea de Matematică și Informatică, București</a></p>
+            <p>E-mail: <a href="mailto:contact@autonet.ro">contact@autonet.ro</a></p>
+            <p>Chat: <a href="https://wa.me/40712345678" target="_blank">Contactează-ne pe WhatsApp</a></p>
+        </address>
+    </div>
+    <p style="margin-top: 20px; font-size: 10px; color: #666;">Adresa dvs. IP: <%= locals.ip_client %></p>
+
+    <div class="maps-container">
+        <div class="map-section">
+            <h2>Harta Reprezentanțelor</h2>
+            <p>Harta reprezentanțelor Mercedes-Benz partenere AutoNet</p>
+            <p>Click pe zonele de pe hartă pentru a afla mai multe despre orașele marcate:</p>
+            <img src="/resurse/imagini/hartaRomaniei.png" alt="Harta Romaniei" usemap="#hartaRomania">
+            <!-- TODO: Definire <map> -->
+        </div>
+        <div class="map-section">
+            <h2>Harta Google</h2>
+            <p>Localizați sediul nostru central în București:</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2849.593936086245!2d26.099983664602695!3d44.43563889182432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ffeed76f8b81%3A0x71bff14a2fe9bf42!2sFacultatea%20de%20Matematic%C4%83%20%C8%99i%20Informatic%C4%83%20-%20Universitatea%20din%20Bucure%C8%99ti!5e0!3m2!1sen!2sro!4v1670840501487!5m2!1sen!2sro" allowfullscreen></iframe>
+        </div>
+    </div>
+</footer>
+
+<a href="#" id="link-top" class="auto-top-button" title="Înapoi la începutul paginii">
+    <div class="steering-wheel">
+        <div class="wheel-center"></div>
+        <div class="wheel-spoke spoke1"></div>
+        <div class="wheel-spoke spoke2"></div>
+        <div class="wheel-spoke spoke3"></div>
+    </div>
+</a>
+
+<!-- Scripturile JS Generale -->
+<!-- Asigură-te că aceste fișiere există în resurse/js/ -->
+<script src="/resurse/js/javatest.js"></script>
+<script src="/resurse/js/mobile-panel-menu.js"></script>
+<!-- Dacă ai separat codul pt meniu hamburger: -->
+<!-- <script src="/resurse/js/menu-toggle.js"></script> -->
+

@@ -1,0 +1,66 @@
+/* resurse/CSS Files/video-vtt.css */
+
+/* Stiluri pentru containerul principal al paginii */
+body{
+    background-color: black;
+}
+
+
+.pagina-video-container {
+    max-width: 1100px; /* Limită lățimea conținutului */
+    margin: 30px auto; /* Centrează și adaugă spațiu sus/jos */
+    padding: 0 20px; /* Padding lateral */
+}
+
+.pagina-video-container h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8em;
+    color: #ffffff;
+    margin-bottom: 30px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+/* Container specific pentru video și formular */
+.video-vtt-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px; /* Spațiu între video și formular */
+    margin-bottom: 40px; /* Spațiu sub secțiune */
+}
+
+/* Wrapper pentru playerul video */
+.video-player-wrapper {
+    width: 100%;
+    max-width: 854px; /* Lățime comună pt video (puțin peste 16:9 / 480p) */
+    min-width: 300px; /* Lățime minimă */
+    margin: 0 auto; /* Centrează wrapperul */
+}
+
+/* Playerul video */
+video.video-player {
+    display: block;
+    width: 100%; /* Cerința 1: Lățime procentuală */
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    background-color: #000;
+}
+
+/* Stilizare Subtitrări VTT (Cerința 5) */
+video.video-player::cue {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #1a1a1a;
+    font-size: 1em; /* Poți ajusta */
+    /* Poziționarea (sus, centrat) este setată în fișierul .vtt */
+}
+
+
+
+/* Responsive */
+@media (max-width: 480px) {
+    .upload-form-container label { display: block; margin-bottom: 8px; margin-right: 0; }
+    .upload-form-container input[type="file"] { display: block; width: 100%; }
+}

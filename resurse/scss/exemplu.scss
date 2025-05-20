@@ -1,0 +1,215 @@
+$color_1: #fff;
+$color_2: #ddd;
+$font-family_1: 'Montserrat', sans-serif;
+$background-color_1: #111;
+$background-color_2: #1a1a1a;
+$background-color_3: #333;
+$background-color_4: #fff;
+$background-color_5: transparent;
+
+/* Efect gradient la hover pentru ecran mare */
+/* Stilizare submeniu cu scalare verticală */
+/* Meniu hamburger pentru ecrane mici */
+/* Ecrane medii - text mai mic, icon casă */
+/* Ecrane mici - meniu hamburger */
+/* Efectul de rotație și opacitate pentru submeniu pe mobil */
+.premium-menu {
+  background-color: $background-color_1;
+  width: 100%;
+  font-family: $font-family_1;
+  position: relative;
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  left: 35%;
+}
+.menu-items {
+  display: flex;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+}
+.menu-item {
+  position: relative;
+  a {
+    display: block;
+    color: $color_1;
+    text-decoration: none;
+    padding: 16px 20px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 200%;
+      height: 100%;
+      background: linear-gradient(to right, #000 0%, #fff 50%, #000 100%);
+      z-index: -1;
+      transition: left 0.4s ease;
+    }
+    &:hover {
+      &::before {
+        left: 0;
+      }
+    }
+  }
+}
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: $background-color_2;
+  min-width: 220px;
+  transform: scaleY(0);
+  transform-origin: center top;
+  transition: transform 0.3s ease;
+  z-index: 10;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  padding: 0;
+  li {
+    list-style-type: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    &:last-child {
+      border-bottom: none;
+    }
+    a {
+      padding: 12px 20px;
+      color: $color_2;
+      font-size: 13px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      &:hover {
+        background-color: $background-color_3;
+        color: $color_1;
+      }
+    }
+  }
+}
+.dropdown {
+  &:hover {
+    .submenu {
+      transform: scaleY(1);
+    }
+  }
+}
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 11;
+  span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: $background-color_4;
+    transition: all 0.3s ease;
+  }
+}
+@media (max-width: 992px) {
+  .menu-item {
+    a {
+      font-size: 12px;
+      padding: 16px 12px;
+    }
+    &:first-child {
+      a {
+        span {
+          display: none;
+        }
+        i {
+          font-size: 14px;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .premium-menu {
+    padding: 15px 0;
+  }
+  .hamburger-menu {
+    display: flex;
+  }
+  .hamburger-menu.active {
+    span {
+      &:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+      }
+    }
+  }
+  .menu-items {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: $background-color_1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 5;
+  }
+  .menu-items.active {
+    transform: translateX(0);
+  }
+  .menu-item {
+    width: 80%;
+    margin: 5px 0;
+    a {
+      text-align: center;
+      padding: 15px;
+      &::before {
+        display: none;
+      }
+      &:hover {
+        background-color: $background-color_3;
+      }
+    }
+  }
+  .submenu {
+    position: relative;
+    width: 100%;
+    background-color: $background-color_5;
+    box-shadow: none;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.5s ease;
+    transform: rotate3d(1, 0, 0, -90deg);
+    transform-origin: top center;
+    li {
+      a {
+        padding: 12px;
+        background-color: $background-color_2;
+      }
+    }
+  }
+  .dropdown.active {
+    .submenu {
+      max-height: 500px;
+      opacity: 1;
+      transform: rotate3d(0, 0, 0, 0deg);
+    }
+  }
+}

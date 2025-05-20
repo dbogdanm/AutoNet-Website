@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ro">
+<head>
+    <%- include('../fragmente/head', { titlu: locals.titlu || "Eroare" }) %>
+    <style>
+        body { display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 80vh; text-align: center; font-family: sans-serif; background-color: #f4f4f4; padding: 20px; }
+        .error-container { padding: 30px 40px; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); max-width: 600px; }
+        .error-image { max-width: 150px; height: auto; margin-bottom: 20px; opacity: 0.7;}
+        h1 { color: #e74c3c; margin-bottom: 15px; font-size: 2em; }
+        p { color: #555; margin-bottom: 25px; line-height: 1.6; }
+        a { color: dodgerblue; text-decoration: none; font-weight: bold; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+<div class="error-container">
+    <% if (locals.eroare && locals.eroare.imagine) { %>
+        <img src="<%= locals.eroare.imagine %>" alt="Ilustrație eroare" class="error-image">
+    <% } %>
+    <h1><%= locals.eroare ? locals.eroare.titlu : "Eroare Necunoscută" %></h1>
+    <p><%= locals.eroare ? locals.eroare.text : "A apărut o eroare neașteptată." %></p>
+    <p><a href="/">Înapoi la pagina principală</a></p>
+</div>
+</body>
+</html>

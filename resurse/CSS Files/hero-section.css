@@ -1,0 +1,318 @@
+.autonet-hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #0a0a0a;
+    overflow: hidden;
+}
+
+.autonet-hero-section:hover .autonet-background {
+    transform: scale(1.1);
+    filter: brightness(1) saturate(1.2);
+}
+
+.autonet-hero-section:hover .autonet-overlay {
+    opacity: 0.6;
+}
+
+.autonet-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/resurse/imagini/fundal-hero-section.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.6;
+    z-index: 1;
+    filter: brightness(0.6) saturate(0.8);
+    transform: scale(1);
+    transition: transform 2.5s linear, filter 2.5s linear;
+}
+
+.autonet-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right,
+    rgba(0,0,0,0.85) 0%,
+    rgba(0,0,0,0.75) 40%,
+    rgba(0,0,0,0.65) 100%);
+    transition: opacity 2.5s linear;
+    z-index: 2;
+}
+
+.autonet-content {
+    position: relative;
+    padding: 80px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 3;
+}
+
+.autonet-premium-section {
+    max-width: 800px;
+}
+
+.autonet-title {
+    font-size: 42px;
+    font-weight: 300;
+    letter-spacing: 1.5px;
+    color: #ffffff;
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.autonet-underline {
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0));
+    margin-bottom: 30px;
+    transition: width 0.5s ease;
+}
+
+.autonet-premium-section:hover .autonet-underline {
+    width: 150px;
+}
+
+.autonet-description {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 50px;
+    max-width: 700px;
+}
+
+.stats-container {
+    display: flex;
+    gap: 80px;
+    margin-bottom: 50px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+}
+
+.stat-number {
+    font-size: 42px;
+    font-weight: 200;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgba(255,255,255,0.6);
+}
+
+.cta-primary{
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    z-index: 3;
+    display: inline-block;
+    transition: transform 0.2s;
+}
+
+
+.cta-primary:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+.cta-secondary{
+    text-decoration: none;
+    color: dodgerblue;
+    padding-left: 30px;
+    position: relative;
+}
+
+.cta-secondary::after{
+    content: '';
+    position: absolute;
+    width: 88%;
+    height: 2px;
+    bottom: -3px;
+    left: 30px;
+    background-color: dodgerblue;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    transition: transform 0.3s ease-out;
+    z-index: 4;
+}
+
+.section-title-container.dark-bg {
+    background-color: #000000; /* Sau #0a0a0a etc. */
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 50px;  /* <- ADAUGĂ ACESTA */
+    padding-right: 50px; /* <- ADAUGĂ ACESTA */
+    /* Alternativ, forma scurtă: padding: 50px 20px; (50px sus/jos, 20px stânga/dreapta) */
+    text-align: center;
+}
+
+/* Stilurile pentru .section-title și .section-underline rămân la fel ca înainte,
+   dar asigură-te că .section-underline are o culoare potrivită. */
+
+.section-title-container .section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5em;
+    font-weight: 300;
+    color: #FFFFFF;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    text-transform: none;
+}
+
+.section-title-container .section-underline {
+    display: inline-block; /* Important pentru a fi centrat de text-align: center al părintelui */
+    width: 80px;           /* Ajustează lățimea după preferințe */
+    height: 2px;           /* Ajustează grosimea */
+    background-color: #CCCCCC; /* Culoare gri deschis pentru linie, ca în imagine */
+    /* Sau pentru alb pur: background-color: #FFFFFF; */
+    /* margin: 0 auto; NU este necesar aici, deoarece text-align:center pe părinte centrează elementele inline-block */
+}
+
+.cta-secondary:hover::after{
+    transform: scaleX(1);
+}
+
+@media (max-width: 768px) {
+    .autonet-content {
+        padding: 40px 20px;
+    }
+
+    .autonet-title {
+        font-size: 32px;
+    }
+
+    .stats-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+/* La sfârșitul hero-section.css */
+
+@media (max-width: 767px) {
+
+    .autonet-hero-section {
+        min-height: 60vh; /* Reducem înălțimea minimă */
+    }
+
+    .autonet-content {
+        padding: 50px 20px; /* Padding ajustat */
+        justify-content: center; /* Poate centrare e mai bună */
+        text-align: center; /* Centrează textul */
+    }
+
+    .autonet-premium-section {
+        max-width: 100%; /* Permite să ocupe toată lățimea */
+    }
+
+    .autonet-title {
+        font-size: 28px; /* Mărime redusă */
+        letter-spacing: 1px;
+    }
+
+    .autonet-underline {
+        margin: 0 auto 25px auto; /* Centrează linia */
+        width: 80px; /* Lățime linie redusă */
+        background: #fff; /* Eliminăm gradientul, facem solidă */
+    }
+
+    .autonet-premium-section:hover .autonet-underline {
+        width: 120px; /* Ajustăm și la hover */
+    }
+
+    .autonet-description {
+        font-size: 15px; /* Mărime redusă */
+        line-height: 1.6;
+        margin-bottom: 40px;
+        max-width: 100%;
+    }
+
+    .stats-container {
+        flex-direction: row; /* Poate încap 2 sau 3 pe rând? */
+        gap: 20px;           /* Spațiu redus */
+        justify-content: center; /* Centrează itemii */
+        flex-wrap: wrap;       /* Permite trecerea pe rândul următor */
+        margin-bottom: 40px;
+    }
+
+    /* Dacă raman pe coloană: */
+    /* .stats-container {
+        flex-direction: column;
+        gap: 25px;
+        align-items: center; // Centrează itemii pe coloană
+        margin-bottom: 40px;
+    } */
+
+    .stat-item {
+        align-items: center; /* Centrează textul intern */
+    }
+
+    .stat-number {
+        font-size: 32px; /* Redus */
+    }
+
+    .stat-label {
+        font-size: 11px; /* Redus */
+        letter-spacing: 1px;
+    }
+
+    .cta-container {
+        display: flex;
+        flex-direction: column; /* Butoane unul sub altul */
+        align-items: center;   /* Centrează butoanele */
+        gap: 15px;             /* Spațiu între butoane */
+    }
+
+    .cta-primary {
+        padding: 12px 25px; /* Padding ajustat */
+        display: block;     /* Ocupă lățimea */
+        width: 80%;         /* Lățime fixă (sau auto) */
+        max-width: 250px;
+    }
+
+    .cta-secondary {
+        padding-left: 0; /* Elimină padding stânga */
+        text-align: center;
+    }
+    .cta-secondary::after {
+        left: 50%; /* Centrează linia */
+        transform: translateX(-50%) scaleX(0); /* Ajustăm transformarea */
+        width: 60%; /* Lățime fixă pentru linie */
+        transform-origin: center bottom; /* Origine pt scalare */
+        bottom: -5px;
+    }
+    .cta-secondary:hover::after{
+        transform: translateX(-50%) scaleX(1); /* Scalare din centru */
+    }
+
+    /* Ajustare text "Recomandările noastre" */
+    #textRecomandare {
+        font-size: 24px; /* Redus semnificativ */
+        padding-left: 15px; /* Padding mobil */
+        padding-right: 15px;
+        text-align: center; /* Centrare */
+        margin-top: 30px; /* Spațiu înainte */
+    }
+}

@@ -1,0 +1,175 @@
+// _hamburger.scss - Actualizat pentru Bonusuri
+
+@use 'sass:color'; // Necesar dacă folosim color.mix în keyframes
+
+// --- Variabile Bonus ---
+$hamburger-container-width: 40px;
+$hamburger-container-height: 30px;
+$bar-width: 70%;
+$bar-height: 3px;
+$bar-spacing: 6px; // Spațiul între centrele barelor va fi bar-height + bar-spacing
+$bar-bg-color: #ffffff;
+$bar-bg-color-active: #e74c3c;
+$hamburger-animation-duration: 0.4s;
+$hamburger-base-delay: 0.08s; // t = 80ms (Bonus 3)
+
+// --- Stiluri Container Hamburger (Bonus 1) ---
+header .hamburger-menu {
+  display: none;
+  width: $hamburger-container-width;
+  height: $hamburger-container-height;
+  position: absolute;
+  top: 15px; // Ajustează
+  right: 15px; // Ajustează
+  z-index: 1101;
+  cursor: pointer;
+  border: none; background: none; padding: 0;
+  &:focus { outline: none; outline-offset: 0; }
+  &:focus-visible { outline: 2px solid dodgerblue; outline-offset: 2px; }
+
+  @media (max-width: 767px) {
+    display: block;
+  }
+}
+
+// --- Stiluri Bare Hamburger (Bonus 1) ---
+header .hamburger-menu .hamburger-bar {
+  display: block;
+  position: absolute;
+  height: $bar-height;
+  width: $bar-width;
+  background: $bar-bg-color; // Culoare inițială
+  border-radius: calc($bar-height / 2);
+  left: 50%;
+  transform: translateX(-50%); // Centrare orizontală inițială
+  // Tranziție pentru REVENIREA la starea inițială (opțional, dar recomandat)
+  transition: transform $hamburger-animation-duration ease-in-out ($hamburger-base-delay * 2 + $hamburger-animation-duration), // Întârziere pt a aștepta animația forward
+  background-color $hamburger-animation-duration ease-in-out ($hamburger-base-delay * 2 + $hamburger-animation-duration),
+  top $hamburger-animation-duration ease-in-out ($hamburger-base-delay * 2 + $hamburger-animation-duration),
+  opacity $hamburger-animation-duration ease-in-out ($hamburger-base-delay * 2 + $hamburger-animation-duration);
+
+  // Poziționare verticală inițială
+  &:nth-child(1) {
+    top: ($hamburger-container-height - (2 * $bar-spacing) - (3 * $bar-height)) / 2;
+    // Asigurăm starea inițială explicit pt animație
+    transform: translateX(-50%) rotate(0deg);
+    opacity: 1;
+  }
+  &:nth-child(2) {
+    top: 50%;
+    margin-top: calc(-#{$bar-height} / 2); // Interpolare necesară în calc()
+    opacity: 1;
+    // Asigurăm starea inițială explicit pt animație
+    transform: translateX(-50%) scaleX(1);
+  }
+  &:nth-child(3) {
+    // Calculăm top relativ la centru pentru consistență
+    top: 50%;
+    margin-top: calc((#{$bar-height} / 2) + #{$bar-spacing});
+    // Asigurăm starea inițială explicit pt animație
+    transform: translateX(-50%) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+// --- Aplicare Animații în Starea Activă (Bonus 2 & 3) ---
+header .hamburger-menu.active {
+  .hamburger-bar {
+    // Setări generale animație
+    animation-duration: $hamburger-animation-duration;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards; // Menține starea finală
+
+    // --- Generare întârzieri succesive cu @for (Bonus 3) ---
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}) {
+        animation-name: animate-bar-#{$i}; // Asociază animația specifică (Bonus 3)
+        // Calculăm întârzierea succesivă (Bonus 3)
+        animation-delay: ($i - 1) * $hamburger-base-delay;
+      }
+    }
+  }
+}
+
+// --- Definiții Keyframes (Bonus 2 - minim 3 cadre) ---
+
+// Animație pentru bara 1 (Top)
+@keyframes animate-bar-1 {
+  0% {
+    // Starea inițială explicită
+    top: ($hamburger-container-height - (2 * $bar-spacing) - (3 * $bar-height)) / 2;
+    transform: translateX(-50%) rotate(0deg);
+    background: $bar-bg-color;
+  }
+  50% {
+    // Stare intermediară - mișcare spre centru și start rotație
+    top: 50%;
+    margin-top: calc(-#{$bar-height} / 2);
+    transform: translateX(-50%) rotate(22.5deg);
+    background: color.mix($bar-bg-color, $bar-bg-color-active, 50%);
+  }
+  100% {
+    // Starea finală - X
+    top: 50%;
+    margin-top: calc(-#{$bar-height} / 2);
+    transform: translateX(-50%) rotate(45deg);
+    background: $bar-bg-color-active;
+  }
+}
+
+// Animație pentru bara 2 (Mijloc)
+@keyframes animate-bar-2 {
+  0% {
+    opacity: 1;
+    transform: translateX(-50%) scaleX(1);
+    background: $bar-bg-color;
+  }
+  49.9% { // Schimbăm opacitatea chiar înainte de mijloc
+    opacity: 1;
+    transform: translateX(-50%) scaleX(0.1); // Aproape dispărută orizontal
+    background: color.mix($bar-bg-color, $bar-bg-color-active, 50%);
+  }
+  50% { // La jumătate dispare complet
+    opacity: 0;
+    transform: translateX(-50%) scaleX(0);
+  }
+  100% {
+    opacity: 0; // Rămâne invizibilă
+    transform: translateX(-50%) scaleX(0);
+    background: $bar-bg-color-active; // Culoarea finală (chiar dacă invizibilă)
+  }
+}
+
+// Animație pentru bara 3 (Jos)
+@keyframes animate-bar-3 {
+  0% {
+    // Starea inițială explicită
+    top: 50%;
+    margin-top: calc((#{$bar-height} / 2) + #{$bar-spacing});
+    transform: translateX(-50%) rotate(0deg);
+    background: $bar-bg-color;
+  }
+  50% {
+    // Stare intermediară - mișcare spre centru și start rotație
+    top: 50%;
+    margin-top: calc(-#{$bar-height} / 2);
+    transform: translateX(-50%) rotate(-22.5deg);
+    background: color.mix($bar-bg-color, $bar-bg-color-active, 50%);
+  }
+  100% {
+    // Starea finală - X
+    top: 50%;
+    margin-top: calc(-#{$bar-height} / 2);
+    transform: translateX(-50%) rotate(-45deg);
+    background: $bar-bg-color-active;
+  }
+}
+
+
+// --- Stiluri Mobile pentru Meniul Premium (NU se modifică, rămân în alt fișier sau aici) ---
+/*
+@media (max-width: 767px) {
+  .premium-menu { display: none !important; ... } // Ascuns inițial
+  body.menu-open .premium-menu { display: block !important; ... } // Afișat la click
+}
+*/

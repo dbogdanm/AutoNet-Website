@@ -1,0 +1,118 @@
+/* resurse/CSS Files/mobile-panel-menu.css - Actualizat pentru Toggle Separat */
+
+/* Panoul principal, Overlay - Rămân la fel */
+.mobile-menu-panel {
+    position: fixed; top: 0; left: -320px; width: 300px; max-width: 85%;
+    height: 100vh; background-color: #1a1a1a; color: #e0e0e0;
+    box-shadow: 5px 0 25px rgba(0, 0, 0, 0.4); z-index: 1200;
+    overflow-y: auto; transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 70px 0 30px; box-sizing: border-box; visibility: hidden;
+    pointer-events: auto;
+}
+body.mobile-menu-active .mobile-menu-panel { left: 0; visibility: visible; }
+.mobile-menu-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6); z-index: 1199; opacity: 0;
+    visibility: hidden; transition: opacity 0.4s ease, visibility 0s linear 0.4s;
+    pointer-events: auto;
+}
+body.mobile-menu-active .mobile-menu-overlay { opacity: 1; visibility: visible; transition: opacity 0.4s ease, visibility 0s linear 0s; }
+
+/* Navigația principală */
+.mobile-main-navigation ul { list-style: none; padding: 0; margin: 0; }
+
+/* Stil pentru wrapper-ul itemilor dropdown */
+.mobile-menu-dropdown .mobile-dropdown-item-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Împinge săgeata la dreapta */
+    padding: 14px 30px; /* Padding principal pe wrapper */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    cursor: default; /* Cursor default pe wrapper */
+}
+
+/* Stil pentru linkurile NORMALE (non-dropdown) și cele din wrapper */
+.mobile-main-navigation ul li a,
+.mobile-menu-dropdown .mobile-dropdown-item-wrapper a {
+    display: block; /* Sau inline-block dacă e în wrapper */
+    padding: 14px 30px; /* Padding pt linkurile simple */
+    color: #d5d5d5;
+    text-decoration: none;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+/* Stil specific pentru linkul DIN wrapper */
+.mobile-menu-dropdown .mobile-dropdown-item-wrapper a {
+    padding: 0; /* Fără padding extra */
+    border-bottom: none; /* Fără border extra */
+    flex-grow: 1; /* Ocupă spațiul disponibil */
+}
+
+.mobile-main-navigation ul li:last-child a { border-bottom: none; } /* Ultimul LI simplu */
+.mobile-menu-dropdown:last-of-type .mobile-dropdown-item-wrapper { border-bottom: none; } /* Ultimul wrapper */
+
+.mobile-main-navigation ul li a:hover,
+.mobile-menu-dropdown .mobile-dropdown-item-wrapper a:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+}
+/* Anulăm hoverul pe linkul din wrapper */
+.mobile-menu-dropdown .mobile-dropdown-item-wrapper a:hover {
+    background-color: transparent;
+}
+
+
+/* Butonul de Toggle Submeniu */
+.submenu-toggle-button {
+    background: none;
+    border: none;
+    color: #aaa;
+    cursor: pointer;
+    padding: 5px;
+    margin-left: 10px;
+    font-size: 14px;
+    line-height: 1; /* Important pt aliniere icon */
+    transition: transform 0.3s ease, color 0.2s ease;
+}
+.submenu-toggle-button:hover { color: #fff; }
+.mobile-menu-dropdown.open .submenu-toggle-button { transform: rotate(180deg); }
+
+/* Separator */
+.mobile-menu-separator hr { border: 0; height: 1px; background-color: rgba(255, 255, 255, 0.1); margin: 10px 30px; }
+
+/* Submeniuri */
+.mobile-submenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: rgba(0,0,0,0.2);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out, margin 0.3s ease-out; /* Adăugat margin la tranziție */
+}
+.mobile-submenu li a {
+    padding: 10px 30px 10px 50px; /* Indentare mai mare */
+    font-size: 14px;
+    color: #aaa;
+    border-bottom: none;
+    display: block; /* Asigurăm display block */
+}
+.mobile-submenu li a:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.07);
+}
+
+.mobile-menu-dropdown.open > .mobile-submenu {
+    max-height: 500px;
+    padding: 10px 0; /* Padding vertical când e deschis */
+    /* margin-top: 5px; /* Adaugăm spațiu sus când e deschis */
+}
+
+/* Search mobil */
+.mobile-search-container { padding: 20px 30px; display: flex; border-top: 1px solid rgba(255, 255, 255, 0.08); margin-top: auto; /* Împinge în jos dacă e loc */ }
+.mobile-search-container input { flex-grow: 1; padding: 10px 15px; border: 1px solid #444; background-color: #2a2a2a; color: #fff; border-radius: 4px 0 0 4px; outline: none; font-size: 14px;}
+.mobile-search-container button { padding: 0 12px; border: 1px solid #444; border-left: none; background-color: #333; color: #ccc; cursor: pointer; border-radius: 0 4px 4px 0; }
+
+/* Ascundere scroll body */
+body.mobile-menu-active { overflow: hidden; }

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ro">
+<head>
+    <%- include('../fragmente/head', { titlu: locals.titlu || "Video & Upload" }) %>
+    <!-- Nu mai e nevoie de link CSS specific aici, e inclus în head.ejs -->
+    <style>
+        /* Poți adăuga stiluri extra DOAR pentru această pagină aici, dacă e absolut necesar */
+        .pagina-video-container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .pagina-video-container h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8em;
+            color: #ffffff;
+            margin-bottom: 30px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+            font-weight: 50;
+        }
+    </style>
+</head>
+<body>
+<%- include('../fragmente/header') %>
+
+<div class="pagina-video-container">
+    <h2>Prezentare Video Noul Ferrari 458 Italia </h2>
+
+    <!-- Containerul specific video/upload -->
+    <div class="video-vtt-container">
+        <div class="video-player-wrapper">
+            <video class="video-player" controls preload="metadata" poster="/resurse/video/poster-video.jpg">
+                <source src="/resurse/video/video-premium.mp4" type="video/mp4">
+                <source src="/resurse/video/video-premium.webm" type="video/webm">
+                Browserul dumneavoastră nu suportă tagul video.
+                <track kind="subtitles" src="/resurse/video/subtitrari_ro.vtt" srclang="ro" label="Română" default>
+                <track kind="subtitles" src="/resurse/video/subtitrari_en.vtt" srclang="en" label="Engleză">
+            </video>
+        </div>
+    </div>
+</div>
+
+<%- include('../fragmente/footer') %>
+</body>
+</html>

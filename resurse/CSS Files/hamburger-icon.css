@@ -1,0 +1,85 @@
+/* hamburger-icon.css */
+
+header .hamburger-menu {
+    display: block;
+    width: 34px;  /* --- Redus puțin lățimea containerului --- */
+    height: 24px; /* --- Redus înălțimea containerului pt spațiere mai mică --- */
+    position: relative;
+    cursor: pointer;
+    border: none; background: none; padding: 0;
+    z-index: 1201;
+    margin-left: 15px;
+    outline: none;
+    outline-offset: 0;
+}
+header .hamburger-menu:focus-visible {
+    outline: 2px solid dodgerblue;
+    outline-offset: 2px;
+}
+@media (max-width: 767px) { /* Media query pt mobil */
+    header .hamburger-menu {
+        /* Poate aici vrei alte dimensiuni? */
+        /* width: 30px; */
+        /* height: 20px; */
+    }
+}
+
+header .hamburger-menu .hamburger-bar {
+    display: block;
+    position: absolute;
+    height: 3px;    /* Grosime bară */
+    width: 100%;   /* --- Bară pe toată lățimea containerului --- */
+    background-color: #ffffff;
+    border-radius: 1.5px;
+    left: 0; /* Pornim de la stânga */
+    /* Eliminăm transform-ul orizontal inițial */
+    /* transform: translateX(-50%); */
+    transition-property: transform, background-color, opacity, top, bottom; /* Adăugat bottom */
+    transition-duration: 0.3s; /* Tranziție puțin mai rapidă */
+    transition-timing-function: ease;
+}
+
+/* Poziționare nouă */
+header .hamburger-menu .hamburger-bar:nth-child(1) {
+    top: 0; /* Prima bară sus */
+    /* Adăugăm originea transformării pentru rotație */
+    transform-origin: center center;
+    transform: rotate(0deg) translateY(0); /* Stare inițială explicită */
+}
+
+header .hamburger-menu .hamburger-bar:nth-child(2) {
+    top: 50%; /* Bara din mijloc la centru */
+    margin-top: -1.5px; /* Centrare verticală exactă */
+    opacity: 1;
+    transform: scaleX(1); /* Stare inițială scalare */
+}
+
+header .hamburger-menu .hamburger-bar:nth-child(3) {
+    bottom: 0; /* A treia bară jos */
+    top: auto; /* Anulăm 'top' implicit */
+    /* Adăugăm originea transformării */
+    transform-origin: center center;
+    transform: rotate(0deg) translateY(0); /* Stare inițială explicită */
+}
+
+/* Stiluri stare activă (X) */
+header .hamburger-menu.active .hamburger-bar {
+    background-color: #e74c3c;
+    /* Mutăm toate barele în centru pentru rotație */
+    top: 50%;
+    bottom: auto; /* Anulăm bottom pentru siguranță */
+    margin-top: -1.5px; /* Offsetul de centrare */
+}
+
+header .hamburger-menu.active .hamburger-bar:nth-child(1) {
+    transform: rotate(45deg); /* Doar rotație */
+}
+
+header .hamburger-menu.active .hamburger-bar:nth-child(2) {
+    transform: scaleX(0); /* Micșorare până la dispariție */
+    opacity: 0;
+}
+
+header .hamburger-menu.active .hamburger-bar:nth-child(3) {
+    transform: rotate(-45deg); /* Doar rotație */
+}

@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="ro">
+<head>
+    <%- include('../fragmente/head') %>
+    <%# Dacă ai un fișier CSS specific pentru galerie, include-l aici %>
+    <%# <link rel="stylesheet" type="text/css" href="/resurse/css/galerie.css"> %>
+</head>
+<body>
+<%- include('../fragmente/header') %>
+
+<%# Blocul de debug poate fi șters sau comentat dacă totul funcționează %>
+<!--
+    <pre style="position:fixed; top:10px; left:10px; background:rgba(0,0,0,0.9); color:lime; padding:10px; z-index:9999; font-size:11px; max-height: 250px; overflow-y:auto; border:1px solid lime; white-space: pre-wrap; word-wrap: break-word;">
+    DEBUG EJS - Toate variabilele locale:
+    locals: <%= typeof locals !== 'undefined' ? JSON.stringify(Object.keys(locals), null, 2) : 'locals nedefinit' %><br>
+    ---
+    typeof galerie: <%= typeof galerie %><br>
+    <% if (typeof galerie !== 'undefined' && galerie) { %>
+        galerie.cale_galerie: <%= galerie.cale_galerie %><br>
+        typeof galerie.imagini: <%= typeof galerie.imagini %><br>
+        <% if (Array.isArray(galerie.imagini)) { %>
+            galerie.imagini.length: <%= galerie.imagini.length %><br>
+        <% } %>
+    <% } else { %>
+        'galerie' este undefined sau null.
+    <% } %>
+    </pre>
+    -->
+
+<!-- ====================================== -->
+<!-- === CONȚINUT SPECIFIC PAGINA INDEX === -->
+<!-- ====================================== -->
+
+<div class="autonet-hero-section">
+    <div class="autonet-background"></div>
+    <div class="autonet-overlay"></div>
+    <div class="autonet-content">
+        <div class="autonet-premium-section">
+            <h2 class="autonet-title">AutoNet - Excelență Automobilistică Redefinită</h2>
+            <div class="autonet-underline"></div>
+            <p class="autonet-description">În universul exclusivist al automobilelor premium, AutoNet se distinge ca destinația supremă pentru connoisseurii și colecționarii pasionați. Platforma noastră sofisticată redefinește experiența achizițiilor auto de lux, oferind acces neîngrădit la un portfolio curatoriat cu meticulozitate de peste 31.000 de capodopere inginerești.</p>
+            <div class="stats-container">
+                <div class="stat-item"><span class="stat-number">31.000+</span><span class="stat-label">Automobile Premium</span></div>
+                <div class="stat-item"><span class="stat-number">124</span><span class="stat-label">Mărci Exclusive</span></div>
+                <div class="stat-item"><span class="stat-number">86</span><span class="stat-label">Țări</span></div>
+            </div>
+            <div class="cta-container">
+                <a href="#" class="cta-primary">Explorează colecția</a>
+                <a href="#" class="cta-secondary">Consultanță personalizată</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section-title-container dark-bg">
+    <h2 id="textRecomandare" class="section-title">Recomandările noastre.</h2>
+    <div class="section-underline"></div>
+</div>
+
+<div class="grid-container2">
+    <!-- Zona 1: Recomandări -->
+    <div class="item item1 recomandari">
+        <div class="recomandare1">
+            <div class="recomandare-imagine-container">
+                <img src="/resurse/imagini/recomandare1.jpg" alt="Recomandare1">
+                <h3 id="titluSE">Inginerie germană</h3>
+            </div>
+            <div class="recomandare-continut">
+                <p id="descriereSE">Când drumul devine scenă, tu ești protagonistul.</p>
+                <button id="butonSE">Descoperă acum</button>
+            </div>
+        </div>
+        <div class="recomandare2">
+            <div class="recomandare-imagine-container">
+                <img src="/resurse/imagini/recomandare2.jpg" alt="Recomandare2">
+                <h3 id="titluM">Eleganța englezească</h3>
+            </div>
+            <div class="recomandare-continut">
+                <p id="descriereM">Unele mașini sunt mai egale decât altele.</p>
+                <button id="butonM">Descoperă acum</button>
+            </div>
+        </div>
+        <div class="recomandare3">
+            <div class="recomandare-imagine-container">
+                <img src="/resurse/imagini/recomandare3.jpg" alt="Recomandare3">
+                <h3 id="titluA">Noul Porsche 911</h3>
+            </div>
+            <div class="recomandare-continut">
+                <p id="descriereA">Te poți pierde, dar nu în mulțime.</p>
+                <button id="butonA">Descoperă acum</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Zona 2: Tabel Evenimente -->
+    <div class="item item2">
+        <h3>EVENIMENTE ȘI LANSĂRI AUTO</h3>
+        <div class="table-container">
+            <table class="events-table">
+                <thead>
+                <tr><th>MODEL</th><th>DATĂ LANSARE</th><th>LOCAȚIE</th><th>PREȚ ESTIMAT (€)</th></tr>
+                </thead>
+                <tbody>
+                <tr><td>Mercedes EQS</td><td>15 Mai 2025</td><td>București</td><td>110.000 €</td></tr>
+                <tr><td>BMW iX M60</td><td>28 Iunie 2025</td><td>Cluj-Napoca</td><td>125.000 €</td></tr>
+                <tr><td>Audi RS e-tron GT</td><td>10 Iulie 2025</td><td>Timișoara</td><td>140.000 €</td></tr>
+                <tr><td>Porsche Taycan Turbo S</td><td>5 August 2025</td><td>Constanța</td><td>180.000 €</td></tr>
+                <tr><td>Ferrari 296 GTB</td><td>12 August 2025</td><td>Brașov</td><td>350.000 €</td></tr>
+                <tr><td>Lamborghini Revuelto</td><td>15 August 2025</td><td>Brașov</td><td>500.000 €</td></tr>
+                </tbody>
+                <tfoot>
+                <tr><td colspan="3">Total evenimente programate</td><td>6</td></tr>
+                </tfoot>
+            </table>
+            <div class="table-caption">Tabel 1: Planificarea lansărilor de mașini premium în 2025</div>
+        </div>
+    </div>
+
+    <!-- Zona 3: Top Vânzări -->
+    <div class="item item3">
+        <h3>Top Vânzări</h3>
+        <ul><li>Mercedes S-Class</li><li>Rolls-Royce Phantom</li><li>Porsche 911</li></ul>
+    </div>
+
+    <!-- Zona 4: Comisioane -->
+    <div class="item item4">
+        <h3>Actualizare Comisioane</h3>
+        <p>Începând cu 15 Aprilie 2025, comisioanele pentru postarea anunțurilor se vor modifica după cum urmează:</p>
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow><mtext>Mașini standard: </mtext><mrow><mi>C</mi><mo>=</mo><mn>50</mn><mo>+</mo><mfrac><mrow><mn>0.5</mn><mo>%</mo></mrow><mrow><mn>100</mn></mrow></mfrac><mo>×</mo><mi>V</mi></mrow></mrow></math>
+        <p></p>
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow><mtext>Mașini de lux: </mtext><mrow><mi>C</mi><mo>=</mo><mn>75</mn><mo>+</mo><mfrac><mrow><mn>0.3</mn><mo>%</mo></mrow><mrow><mn>100</mn></mrow></mfrac><mo>×</mo><mi>V</mi></mrow></mrow></math>
+        <p>Unde <em>C</em> reprezintă comisionul în EUR iar <em>V</em> este valoarea mașinii în EUR.</p>
+        <p>Pentru anunțurile premium cu fotografii profesionale și vizibilitate sporită, se adaugă o taxă suplimentară de 25 EUR.</p>
+    </div>
+
+    <!-- Zona 5 -->
+    <div class="item item5">
+        <h3>Zona 5:</h3><p>lorem</p><p>lorem</p><p>lorem</p>
+    </div>
+
+    <!-- Zona 6: Galerie Statică -->
+    <div class="item item6" id="galerie-statica-ancora">
+        <div class="galerie-container">
+            <h2>Galerie Statică</h2>
+            <% if (typeof galerie !== 'undefined' && galerie && typeof galerie.imagini !== 'undefined' && Array.isArray(galerie.imagini) && galerie.imagini.length > 0) { %>
+                <div class="galerie-grid">
+                    <% galerie.imagini.forEach(function(imagine, index) { %>
+                    <% let caleCompletaImagine = (galerie.cale_galerie || '') + (imagine.fisier || ''); %>
+                    <figure class="galerie-item">
+                        <a href="<%= caleCompletaImagine %>"
+                           data-lightbox="galerie-statica"
+                           data-title="<%= imagine.titlu %><% if (imagine.descriere) { %> - <%= imagine.descriere %><% } %><% if (imagine.timp) { %> (Interval: <%= imagine.timp %>)<% } %>">
+                            <img src="<%= caleCompletaImagine %>" alt="<%= imagine.titlu || 'Imagine galerie' %>">
+                        </a>
+                        <figcaption class="galerie-item-info">
+                            <%# Indexul va fi adăugat de CSS prin ::before %>
+                            <h3><%= imagine.titlu %></h3>
+                            <% if (imagine.descriere) { %><p class="galerie-descriere"><%= imagine.descriere %></p><% } %>
+                            <% if (imagine.timp) { %><small class="galerie-timp">Interval: <%= imagine.timp %></small><% } %>
+                        </figcaption>
+                    </figure>
+                    <% }); %>
+                </div>
+            <% } else { %>
+                <p>Momentan nu sunt imagini în galerie.</p>
+                <% if (typeof galerie !== 'undefined' && galerie && typeof galerie.imagini !== 'undefined' && Array.isArray(galerie.imagini)) { %>
+                    <p style="font-size: 0.8em; color: #777;">(Debug: 'galerie.imagini' este un array, dar este gol. Lungime: <%= galerie.imagini.length %>)</p>
+                <% } else if (typeof galerie !== 'undefined' && galerie) { %>
+                    <p style="font-size: 0.8em; color: #777;">(Debug: 'galerie' există, dar 'galerie.imagini' nu este un array valid sau lipsește.)</p>
+                <% } else { %>
+                    <p style="font-size: 0.8em; color: #777;">(Debug: variabila 'galerie' nu este definită în locals)</p>
+                <% } %>
+            <% } %>
+        </div>
+    </div>
+
+    <!-- Zona 7 -->
+    <div class="item item7">
+        <h3>Zona 7</h3><p>Lorem ipsum dolor sit amet.</p>
+    </div>
+    <!-- Zona 8: Blog, Video, Newsletter -->
+    <div class="item item8">
+        <!-- Blog -->
+        <h3 class="section-title">The Journal</h3>
+        <div class="blog-section">
+            <div class="blog-posts">
+                <div class="blog-post main-post">
+                    <div class="post-image">
+                        <img src="/resurse/imagini/ferarri.jpg" alt="Ferrari 250 GT">
+                        <div class="post-date">19 Apr 2025</div>
+                    </div>
+                    <h4 class="post-title">Ferrari 250 GT al Angelinei Jolie retras de la licitația Christie's</h4>
+                    <p class="post-excerpt">În mod neașteptat, Christie's a retras de la licitație mult anticipatul Ferrari 250 GT din colecția "Excepțională"...</p>
+                </div>
+                <div class="blog-sidebar">
+                    <div class="blog-post side-post">
+                        <div class="post-image"><img src="/resurse/imagini/dourado.jpg" alt="Supercars"></div>
+                        <div class="post-content"><div class="post-date">23 MAI 2024</div><h4 class="post-title">Prezentarea Dourado: Supermașini, Mașini Exotice și Personalizări la Comandă în Dubai</h4><p class="post-excerpt">Dubai este un hub regional de afaceri și divertisment, dar este și cunoscut ca fiind capitala supercarurilor...</p></div>
+                    </div>
+                    <div class="blog-post side-post">
+                        <div class="post-image"><img src="/resurse/imagini/sprinter.jpg" alt="Mercedes-Benz Sprinter"></div>
+                        <div class="post-content"><div class="post-date">12 DEC 2023</div><h4 class="post-title">Magnum Opus: Dubă de Lux Personalizată Construită pe Baza Mercedes-Benz Sprinter</h4><p class="post-excerpt">Acest Mercedes Sprinter de lux este cea mai nouă adăugire la linia de conversii personalizate Fari Cars...</p></div>
+                    </div>
+                    <div class="blog-post side-post">
+                        <div class="post-image"><img src="/resurse/imagini/chiron.jpg" alt="Bugatti Chiron"></div>
+                        <div class="post-content"><div class="post-date">01 NOV 2023</div><h4 class="post-title">Chiron "Era de Aur": Operele de Artă pe Roți ale Bugatti Stabilesc un Nou Standard pentru Personalizare</h4><p class="post-excerpt">Bugatti Chiron Super Sport 'Golden Era' este probabil cel mai provocator proiect personalizat care...</p></div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- Sfârșit .blog-section -->
+
+        <!-- Video Promo -->
+        <section class="video-promo-section">
+            <h2>Promoții Premium</h2>
+            <div class="container-iframe">
+                <div class="taburi-iframe">
+                    <a href="https://www.youtube.com/embed/-4zsY28t76k?si=xld5rE0pUPkAtbtk" target="ifr-video" class="video-tab active" >
+                        <span class="tab-number">01</span><div class="tab-info"><span class="tab-title">. Mercedes S-Class</span><span class="tab-desc">. Eleganță și performanță</span></div>
+                    </a>
+                    <a href="https://www.youtube.com/embed/DZAdVY9kKbc?si=QQJpuKFOvlYQya0j" target="ifr-video" class="video-tab" data-thumbnail="https://img.youtube.com/vi/iG_zxE-e7Fg/maxresdefault.jpg">
+                        <span class="tab-number">02</span><div class="tab-info"><span class="tab-title">. Porsche 911 GT3</span><span class="tab-desc">. Inginerie de excepție</span></div>
+                    </a>
+                    <a href="https://www.youtube.com/embed/PCc1qDMsgMI?si=7LSDsBq-9zRKanzM" target="ifr-video" class="video-tab" data-thumbnail="https://img.youtube.com/vi/GoGRi0YheZ8/maxresdefault.jpg">
+                        <span class="tab-number">03</span><div class="tab-info"><span class="tab-title">. Rolls-Royce Ghost Series II</span><span class="tab-desc">. Lux fără compromisuri</span></div>
+                    </a>
+                </div>
+                <div class="iframe-preview">
+                    <iframe name="ifr-video" src="https://www.youtube.com/embed/-4zsY28t76k?si=xld5rE0pUPkAtbtk" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section> <!-- Sfârșit .video-promo-section -->
+
+        <!-- Newsletter -->
+        <div class="newsletter-section">
+            <div class="newsletter-content">
+                <h3>Newsletter Săptămânal de Lux</h3>
+                <p>Primiți o selecție frumos organizată a tendințelor din lumea luxului, cu povești din interior și sfaturi de la experții noștri</p>
+            </div>
+            <div class="newsletter-form">
+                <input type="email" placeholder="Email" />
+                <button>Abonează-te</button>
+                <div class="terms-notice">PRIN ÎMPĂRTĂȘIREA EMAILULUI DVS., SUNTEȚI DE ACORD CU TERMENII NOȘTRI DE UTILIZARE ȘI CONFIDENȚIALITATE</div>
+            </div>
+        </div> <!-- Sfârșit .newsletter-section -->
+    </div> <!-- Sfârșit .item8 -->
+
+</div> <!-- Sfârșit .grid-container2 -->
+
+<!-- ====================================== -->
+<!-- === SFÂRȘIT CONȚINUT SPECIFIC INDEX === -->
+<!-- ====================================== -->
+
+<%- include('../fragmente/footer') %>
+
+
+<div id="mobile-menu-overlay" class="mobile-menu-overlay"></div>
+
+
+</body>
+</html>

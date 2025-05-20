@@ -1,0 +1,98 @@
+<!-- views/pagini/despre.ejs -->
+<!doctype html>
+<html lang="ro">
+<head>
+    <%- include('../fragmente/head', { titlu: locals.titlu || "Despre Noi" }) %>
+    <!-- Linkul către despre-premium.css este deja în head.ejs -->
+    <style>
+        /* Poți păstra stilurile specifice aici sau în despre-premium.css */
+        .despre-pagina-container { background-color: #000000; color: #d5d5d5; padding-top: 40px; padding-bottom: 60px; font-family: 'Roboto', sans-serif; }
+        .despre-continut-limitat { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+        .despre-hero-minimal { padding: 80px 0; text-align: center; background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.95)), url('/resurse/imagini/despre-hero-bg.jpg') no-repeat center center; background-size: cover; border-bottom: 1px solid rgba(255, 255, 255, 0.08); margin-bottom: 60px; }
+        .despre-hero-minimal h1 { font-family: 'Montserrat', sans-serif; font-size: 2.8em; font-weight: 200; color: #ffffff; letter-spacing: 3px; margin-bottom: 15px; text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5); }
+        .despre-hero-minimal .subtitlu-hero { font-size: 1.1em; font-weight: 300; color: rgba(213, 213, 213, 0.8); max-width: 600px; margin: 0 auto; line-height: 1.6; }
+        .despre-continut-principal { padding-bottom: 60px; }
+        .despre-sectiune { margin-bottom: 50px; padding-bottom: 30px; border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
+        .despre-sectiune:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+        .despre-sectiune h2 { font-family: 'Montserrat', sans-serif; font-size: 1.8em; font-weight: 400; color: #ffffff; margin-bottom: 8px; letter-spacing: 1px; }
+        .linie-subtitlu { width: 60px; height: 2px; background: linear-gradient(to right, #271c51, #1a2f70); margin-bottom: 25px; }
+        .despre-sectiune p { font-size: 1em; line-height: 1.9; color: #c5c5c5; margin-bottom: 1.6em; }
+        .despre-sectiune p:last-child { margin-bottom: 0; }
+        .despre-valori-lista { list-style: none; padding: 0; margin-top: 30px; }
+        .despre-valori-lista li { display: flex; align-items: flex-start; margin-bottom: 25px; gap: 15px; }
+        .despre-valori-lista li i { font-size: 1.5em; color: rgba(44, 29, 94, 0.86); margin-top: 3px; width: 30px; text-align: center; }
+        .despre-valori-lista li div strong { display: block; font-family: 'Montserrat', sans-serif; font-size: 1.05em; font-weight: 500; color: #e8e8e8; margin-bottom: 4px; }
+        .despre-valori-lista li div span { font-size: 0.95em; line-height: 1.6; color: #b5b5b5; }
+        /* Responsive */
+        @media (max-width: 767px) { .despre-hero-minimal { padding: 50px 0; margin-bottom: 40px; } .despre-hero-minimal h1 { font-size: 2em; letter-spacing: 1px; } .despre-hero-minimal .subtitlu-hero { font-size: 1em; } .despre-continut-limitat { padding: 0 15px; } .despre-sectiune { margin-bottom: 40px; padding-bottom: 25px; } .despre-sectiune h2 { font-size: 1.5em; } .linie-subtitlu { margin-bottom: 20px; } .despre-sectiune p { font-size: 0.95em; line-height: 1.8; } .despre-valori-lista li { margin-bottom: 20px; gap: 12px; } .despre-valori-lista li i { font-size: 1.3em; width: 25px; } .despre-valori-lista li div strong { font-size: 1em; } .despre-valori-lista li div span { font-size: 0.9em; } }
+    </style>
+</head>
+<body>
+<%- include('../fragmente/header') %>
+
+<div class="despre-pagina-container">
+    <main class="despre-continut-principal">
+        <div class="despre-continut-limitat">
+
+            <section class="despre-hero-minimal">
+                <div class="despre-continut-limitat">
+                    <h1>Pasiune Pentru Perfecțiune Auto</h1>
+                    <p class="subtitlu-hero">Descoperiți povestea AutoNet și angajamentul nostru pentru excelență.</p>
+                </div>
+            </section>
+
+            <section class="despre-sectiune">
+                <h2>Cine Suntem</h2>
+                <div class="linie-subtitlu"></div>
+                <p>AutoNet redefinește standardele în lumea automobilelor de lux. Suntem mai mult decât o platformă de vânzare – suntem curatori ai celor mai exclusiviste experiențe auto, o punte de legătură între colecționari pasionați și vehicule excepționale din întreaga lume.</p>
+                <p>Ne mândrim cu o rețea globală extinsă și o reputație construită pe încredere, transparență și un serviciu client excepțional.</p>
+            </section>
+
+            <section class="despre-sectiune">
+                <h2>Viziunea Noastră</h2>
+                <div class="linie-subtitlu"></div>
+                <p>Am pornit la drum cu o viziune clară: să transformăm modul în care automobilele de lux sunt tranzacționate. Ne propunem să creăm o experiență fluidă, sigură și personalizată, eliminând complexitatea și incertitudinea asociate adesea cu achizițiile de valoare mare. Credem că fiecare interacțiune cu AutoNet trebuie să reflecte calitatea și exclusivitatea mașinilor pe care le reprezentăm.</p>
+            </section>
+
+            <section class="despre-sectiune">
+                <h2>Valorile Care Ne Definesc</h2>
+                <div class="linie-subtitlu"></div>
+                <ul class="despre-valori-lista">
+                    <li>
+                        <i class="fas fa-shield-alt"></i>
+                        <div>
+                            <strong>Integritate & Transparență</strong>
+                            <span>Fiecare listare este verificată, fiecare tranzacție este clară.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-gem"></i>
+                        <div>
+                            <strong>Exclusivitate & Calitate</strong>
+                            <span>Selectăm doar vehicule care întrunesc standarde de excelență.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-users"></i>
+                        <div>
+                            <strong>Centrare pe Client</strong>
+                            <span>Oferim consultanță personalizată și suport dedicat.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-globe-europe"></i>
+                        <div>
+                            <strong>Rețea Globală</strong>
+                            <span>Conectăm cumpărători și vânzători de pe întreg mapamondul.</span>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+        </div>
+    </main>
+</div>
+
+<%- include('../fragmente/footer') %>
+</body>
+</html>

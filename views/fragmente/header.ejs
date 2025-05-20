@@ -1,0 +1,95 @@
+<!-- views/fragmente/header.ejs (Corectat Final) -->
+<header>
+    <div class="top-nav">
+        <!-- Hamburger Primul Element -->
+        <button class="hamburger-menu" aria-label="Meniu principal" aria-expanded="false" aria-controls="mobile-menu-panel">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+        </button>
+
+        <!-- Link Titlu -->
+        <a href="/" id="linkTitluSite">
+            <h1 id="titluSite">AutoNet</h1>
+        </a>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <div class="search-bar premium-search">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" placeholder="Caută modelul dorit...">
+            </div>
+        </div>
+
+        <!-- Containerul din dreapta este eliminat, nu mai avem nevoie de el
+             deoarece hamburgerul este acum la începutul .top-nav -->
+
+    </div> <!-- Sfârșit .top-nav -->
+
+    <!-- Bara de Branduri (Rămâne) -->
+    <nav class="brands-nav">
+        <ul class="marciAuto">
+            <li><a href="#">Bugatti</a></li>
+            <li><a href="#">Pagani</a></li>
+            <li><a href="#">Koenigsegg</a></li>
+            <li><a href="#">Ferrari</a></li>
+            <li><a href="#">Lamborghini</a></li>
+            <li><a href="#">Mercedes</a></li>
+            <li><a href="#">Rolls-Royce</a></li>
+            <li><a href="#">McLaren</a></li>
+            <li><a href="#">Brabus</a></li>
+            <li><a href="#">Porsche</a></li>
+            <li><a href="#">Aston Martin</a></li>
+            <li><a href="#">Bentley</a></li>
+            <li><a href="#">Maybach</a></li>
+            <li><a href="#">BMW</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sub-Banner (Rămâne) -->
+    <div class="sub-banner">
+        <h3>Mașini de lux</h3>
+        <p id="sub-sub-banner">
+            Explorați peste 31.000 de mașini de lux, supermașini și mașini exotice de vânzare în întreaga lume
+        </p>
+    </div>
+
+    <!-- Panoul Meniului Mobil și Overlay (Mutate Aici) -->
+    <div id="mobile-menu-panel" class="mobile-menu-panel" aria-hidden="true">
+        <nav class="mobile-main-navigation">
+            <ul> <!-- !!! CONȚINUTUL ACESTA TREBUIE SĂ FIE AICI !!! -->
+                <li><a href="/">Acasă</a></li>
+                <li class="mobile-menu-dropdown">
+                    <a href="#">Galerii</a> <!-- Sau un link direct dacă ai o pagină de "Galerii" -->
+                    <ul class="mobile-submenu">
+                        <li><a href="/#galerie-statica-ancora">Galerie Statică</a></li> <!-- MODIFICAT AICI -->
+                        <li><a href="#">Galerie Dinamică</a></li>
+                        <li><a href="#">Evenimente Auto</a></li>
+                    </ul>
+                </li>
+                <li class="mobile-menu-dropdown">
+                    <div class="mobile-dropdown-item-wrapper"> <!-- Wrapper nou -->
+                        <a href="/despre">Despre Noi</a> <!-- Linkul principal -->
+                        <button class="submenu-toggle-button" aria-label="Extinde Despre Noi"> <!-- Buton separat pt toggle -->
+                            <i class="fas fa-chevron-down"></i> <!-- Icon săgeată -->
+                        </button>
+                    </div>
+                    <ul class="mobile-submenu">
+                        <li><a href="#">Istoric Companie</a></li>
+                        <li><a href="#">Echipa Noastră</a></li>
+                        <li><a href="#">Valorile Noastre</a></li>
+                        <li><a href="/video-upload">Video prezentări</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Vehicule</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="mobile-menu-separator"><hr style="border-color: rgba(255,255,255,0.1);"></li>
+                <li><a href="#">Sell With Us</a></li>
+                <li><a href="#" id="mobile-login">Log In</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="mobile-menu-overlay" class="mobile-menu-overlay"></div>
+    <!-- Sfârșit Panou și Overlay Mobil -->
+
+</header>

@@ -1,0 +1,168 @@
+/* output.css - Stiluri Desktop pentru Premium Menu (aplicate doar de la 768px în sus) */
+
+@media (min-width: 768px) { /* <<<<<< START MEDIA QUERY PENTRU DESKTOP >>>>>> */
+
+  .premium-menu {
+    /* Păstrăm gradientul vertical principal și stilurile containerului */
+    background: linear-gradient(to bottom, #6e7a7d 0%, #3a3e3d 50%, #1a1917 100%);
+    width: 100%;
+    font-family: "Montserrat", sans-serif;
+    position: relative; /* Poate fi static dacă nu are submeniuri absolut poziționate */
+    z-index: 1000;
+    display: flex; /* Asigură display flex pe desktop */
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 5px 0;
+  }
+
+  .menu-items {
+    display: flex; /* Asigură display flex pe desktop */
+    list-style: none;
+    margin: 0 auto;
+    padding: 0 10px; /* Adăugăm puțin spațiu la capete */
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .menu-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 5px 4px; /* Spațiere verticală și orizontală între itemi */
+  }
+
+  /* === STILIZAREA ITEMULUI INDIVIDUAL (LINK) === */
+  .menu-item a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff; /* Text ALB implicit */
+    text-decoration: none;
+    padding: 12px 20px; /* Padding ajustat */
+    font-size: 14px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    font-weight: 500; /* Greutate text vizibilă */
+    position: relative;
+    white-space: nowrap;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7); /* Umbra textului */
+
+    /* Fundal distinct pentru fiecare item */
+    background-color: rgba(80, 85, 90, 0.5); /* Gri semi-transparent */
+    /* Optional: un gradient subtil pe item */
+    /* background: linear-gradient(to bottom, rgba(90,95,100,0.6), rgba(70,75,80,0.6)); */
+
+    border: 1px solid transparent; /* Border inițial transparent */
+    border-top-color: rgba(255, 255, 255, 0.15); /* Linie fină luminoasă sus */
+    border-bottom-color: rgba(0, 0, 0, 0.3);      /* Linie fină întunecată jos */
+    border-radius: 4px; /* Colțuri ușor rotunjite */
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05), /* Inner shadow subtil */
+    0 1px 2px rgba(0, 0, 0, 0.3); /* Drop shadow subtil */
+
+    /* Eliminăm tranziția pe culoare (rămâne alb) */
+    /* Adăugăm tranziții pentru fundal, border, box-shadow */
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, text-shadow 0.3s ease;
+  }
+
+  /* Eliminăm ::before dacă nu mai dorim efectul de sweep pe fundalul itemului */
+  /* Dacă îl păstrăm, trebuie să aibă z-index peste fundalul adăugat pe <a> */
+  /* .menu-item a::before { ... } */
+
+  /* === STILIZAREA LA HOVER === */
+  .menu-item a:hover {
+    /* background-color: rgba(95, 100, 105, 0.65); /* Fundal puțin mai deschis la hover */
+    /* Sau un gradient la hover */
+    background: linear-gradient(to bottom, rgba(100,105,110,0.7), rgba(80,85,90,0.7));
+    border-top-color: rgba(255, 255, 255, 0.25);
+    border-bottom-color: rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.08),
+    0 2px 4px rgba(0, 0, 0, 0.4);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    /* Culoarea textului rămâne #ffffff */
+  }
+
+  /* Indicatorul ::after sub text (păstrăm cum era) */
+  .menu-item a::after {
+    content: "";
+    position: absolute;
+    bottom: 6px; /* Ajustat bottom */
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(to right, #f0f0f0, #e9e0c9);
+    transform: translateX(-50%);
+    transition: width 0.35s ease-out;
+    border-radius: 1px;
+  }
+
+  .menu-item a:hover::after,
+  .menu-item.active a::after { /* Asigură-te că ai clasa .active pe li */
+    width: 70%;
+  }
+
+  /* === STILIZARE SUBMENIU (Text Vizibil) === */
+  .submenu {
+    position: absolute; /* Necesar pt poziționare sub părinte */
+    top: 100%;
+    left: 0; /* Se aliniază la stânga itemului părinte */
+    /* Poți adăuga puțin spațiu sus: */
+    /* margin-top: 5px; */
+    background: linear-gradient(to bottom, #383838, #202020);
+    min-width: 230px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px) scaleY(0.95);
+    transform-origin: center top;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    padding: 8px 0;
+    border-radius: 0 0 5px 5px;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-top: none;
+  }
+
+  .submenu li {
+    list-style-type: none;
+  }
+
+  .submenu li a {
+    padding: 13px 25px;
+    color: #f5f5f5; /* Text submeniu vizibil */
+    font-size: 13px;
+    letter-spacing: 0.8px;
+    justify-content: flex-start; /* Aliniere la stânga */
+    display: block; /* Ocupă toată lățimea li */
+    width: 100%; /* Asigură lățimea */
+    box-sizing: border-box; /* Include padding în width */
+    border-left: 3px solid transparent;
+    transition: all 0.3s ease;
+    font-weight: 400;
+    text-shadow: none;
+    /* Resetează fundalul și borderul de pe linkul principal */
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .submenu li a:hover {
+    background-color: rgba(255, 255, 255, 0.07); /* Doar fundal la hover */
+    color: #ffffff;
+    border-left: 3px solid rgba(226, 211, 166, 0.8); /* Auriu */
+    padding-left: 28px; /* Indentare la hover */
+  }
+
+  /* Afișează submeniul la hover pe elementul părinte .dropdown */
+  .dropdown:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scaleY(1);
+  }
+
+} /* <<<<<< ÎNCHIDERE MEDIA QUERY PENTRU DESKTOP >>>>>> */

@@ -1,0 +1,26 @@
+Principii generale pentru AutoNet.ro
+Transparență și încredere
+
+Oferă informații detaliate despre fiecare autoturism, inclusiv istoric, kilometraj real și eventuale reparații.
+Asigură verificarea anunțurilor pentru a preveni fraude și informații false.
+Experiență utilizator optimizată (UX/UI)
+
+Design intuitiv, ușor de navigat, cu filtre avansate pentru căutare.
+Performanță ridicată: timp de încărcare redus și interfață responsivă pentru dispozitive mobile și desktop.
+Autentificare și înregistrare rapidă, cu posibilitatea de a salva anunțuri favorite.
+Calitate și diversitate a ofertelor
+
+Asigură o gamă variată de autoturisme, de la mașini de oraș la SUV-uri și modele premium.
+Încurajează dealerii și vânzătorii privați să ofere prețuri competitive și descrieri detaliate.
+Securitate și protecția datelor
+
+Implementare HTTPS și protecție anti-fraudă pentru a asigura confidențialitatea utilizatorilor.
+Protejarea datelor personale ale utilizatorilor conform GDPR.
+Suport și asistență clienți
+
+Oferă un sistem de asistență eficient (live chat, email, telefon) pentru întrebări legate de anunțuri sau verificarea mașinilor.
+O secțiune de întrebări frecvente (FAQ) pentru probleme comune.
+Actualizare constantă și inovație
+
+Introducerea de funcționalități noi (ex. evaluare automată a prețului, compararea anunțurilor).
+Monitorizarea feedback-ului utilizatorilor pentru îmbunătățirea platformei.

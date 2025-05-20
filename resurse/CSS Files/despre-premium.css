@@ -1,0 +1,183 @@
+/* resurse/CSS Files/despre-premium.css - Stiluri Ultra Premium */
+
+/* Setări generale pentru pagina "Despre" */
+.pagina-despre {
+    background-color: #000000; /* Un negru/gri foarte închis, ușor cald */
+    color: #d5d5d5; /* Culoare text principal (gri deschis) */
+    font-family: 'Roboto', sans-serif;
+}
+
+.despre-container-principal {
+    /* Nu necesită stiluri speciale, controlează doar fluxul */
+}
+
+/* Containerul care limitează lățimea conținutului */
+.despre-continut-limitat {
+    max-width: 960px; /* Lățime maximă pentru conținut */
+    margin: 0 auto;
+    padding: 0 20px; /* Padding lateral */
+}
+
+/* Secțiunea Hero Minimalistă */
+.despre-hero-minimal {
+    padding: 80px 0;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.95)), url('/resurse/imagini/despre-hero-bg.jpg') no-repeat center center; /* <<--- FOLOSEȘTE IMAGINEA TA AICI */
+    background-size: cover;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 60px;
+}
+
+.despre-hero-minimal h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.8em; /* Mărime ajustată */
+    font-weight: 200; /* Font foarte subțire */
+    color: #ffffff;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.despre-hero-minimal .subtitlu-hero {
+    font-size: 1.1em;
+    font-weight: 300;
+    color: rgba(213, 213, 213, 0.8); /* #d5d5d5 cu transparență */
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Conținutul principal, sub hero */
+.despre-continut-principal {
+    padding-bottom: 60px; /* Spațiu sub ultimul element */
+}
+
+/* Stiluri pentru fiecare secțiune de conținut */
+.despre-sectiune {
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06); /* Separator subtil între secțiuni */
+}
+
+.despre-sectiune:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.despre-sectiune h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8em; /* Mărime titlu secțiune */
+    font-weight: 400; /* Mai subțire decât înainte */
+    color: #ffffff; /* Text alb pentru titluri */
+    margin-bottom: 8px; /* Spațiu mic sub titlu */
+    letter-spacing: 1px;
+}
+
+/* Linia de sub titlu */
+.linie-subtitlu {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(to right, rgba(19, 52, 136, 0.63), #172887); /* Gradient roșu accent */
+    margin-bottom: 25px; /* Spațiu după linie */
+}
+
+.despre-sectiune p {
+    font-size: 1em; /* Mărime text standard */
+    line-height: 1.9; /* Spațiere linii crescută */
+    color: #c5c5c5; /* Gri puțin mai deschis pt text */
+    margin-bottom: 1.6em; /* Spațiere paragrafe */
+}
+.despre-sectiune p:last-child {
+    margin-bottom: 0;
+}
+
+/* Stil Lista Valori */
+.despre-valori-lista {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px; /* Spațiu deasupra listei */
+}
+
+.despre-valori-lista li {
+    display: flex;
+    align-items: flex-start; /* Aliniază iconița cu începutul textului */
+    margin-bottom: 25px;
+    gap: 15px; /* Spațiu între icon și text */
+}
+
+.despre-valori-lista li i { /* Stilizare Icon FontAwesome */
+    font-size: 1.5em;
+    color: #142c73; /* Roșu accent */
+    margin-top: 3px; /* Aliniere fină verticală */
+    width: 30px; /* Lățime fixă pt aliniere */
+    text-align: center;
+}
+
+.despre-valori-lista li div strong {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.05em;
+    font-weight: 500;
+    color: #e8e8e8; /* Aproape alb */
+    margin-bottom: 4px;
+}
+
+.despre-valori-lista li div span {
+    font-size: 0.95em;
+    line-height: 1.6;
+    color: #b5b5b5; /* Gri mai deschis */
+}
+
+
+/* Responsive Design */
+@media (max-width: 767px) {
+    .despre-hero-minimal {
+        padding: 50px 0;
+        margin-bottom: 40px;
+    }
+    .despre-hero-minimal h1 {
+        font-size: 2em;
+        letter-spacing: 1px;
+    }
+    .despre-hero-minimal .subtitlu-hero {
+        font-size: 1em;
+    }
+
+    .despre-continut-limitat {
+        padding: 0 15px; /* Padding lateral redus */
+    }
+
+    .despre-sectiune {
+        margin-bottom: 40px;
+        padding-bottom: 25px;
+    }
+
+    .despre-sectiune h2 {
+        font-size: 1.5em;
+    }
+
+    .linie-subtitlu {
+        margin-bottom: 20px;
+    }
+
+    .despre-sectiune p {
+        font-size: 0.95em;
+        line-height: 1.8;
+    }
+
+    .despre-valori-lista li {
+        margin-bottom: 20px;
+        gap: 12px;
+    }
+    .despre-valori-lista li i {
+        font-size: 1.3em;
+        width: 25px;
+    }
+    .despre-valori-lista li div strong {
+        font-size: 1em;
+    }
+    .despre-valori-lista li div span {
+        font-size: 0.9em;
+    }
+}
