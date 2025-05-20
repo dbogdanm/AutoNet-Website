@@ -65,7 +65,7 @@ AutoNet is built upon a foundation of robust and widely-adopted web technologies
 
 ---
 
-## 🚀 Development Journey & Learning Objectives
+##  Development Journey & Learning Objectives
 
 This project is a cornerstone of a "Web Technologies" academic program, designed to solidify and demonstrate a comprehensive understanding of full-stack web development principles. Key learning objectives achieved include:
 
