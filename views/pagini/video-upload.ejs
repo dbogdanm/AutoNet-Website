@@ -2,9 +2,7 @@
 <html lang="ro">
 <head>
     <%- include('../fragmente/head', { titlu: locals.titlu || "Video & Upload" }) %>
-    <!-- Nu mai e nevoie de link CSS specific aici, e inclus în head.ejs -->
     <style>
-        /* Poți adăuga stiluri extra DOAR pentru această pagină aici, dacă e absolut necesar */
         .pagina-video-container {
             max-width: 1100px;
             margin: 30px auto;
@@ -28,7 +26,6 @@
 <div class="pagina-video-container">
     <h2>Prezentare Video Noul Ferrari 458 Italia </h2>
 
-    <!-- Containerul specific video/upload -->
     <div class="video-vtt-container">
         <div class="video-player-wrapper">
             <video class="video-player" controls preload="metadata" poster="/resurse/video/poster-video.jpg">

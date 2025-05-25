@@ -2,13 +2,12 @@
 <html lang="ro">
 <head>
     <%- include('../fragmente/head') %>
-    <%# Dacă ai un fișier CSS specific pentru galerie, include-l aici %>
-    <%# <link rel="stylesheet" type="text/css" href="/resurse/css/galerie.css"> %>
+
 </head>
 <body>
 <%- include('../fragmente/header') %>
 
-<%# Blocul de debug poate fi șters sau comentat dacă totul funcționează %>
+
 <!--
     <pre style="position:fixed; top:10px; left:10px; background:rgba(0,0,0,0.9); color:lime; padding:10px; z-index:9999; font-size:11px; max-height: 250px; overflow-y:auto; border:1px solid lime; white-space: pre-wrap; word-wrap: break-word;">
     DEBUG EJS - Toate variabilele locale:
@@ -27,9 +26,6 @@
     </pre>
     -->
 
-<!-- ====================================== -->
-<!-- === CONȚINUT SPECIFIC PAGINA INDEX === -->
-<!-- ====================================== -->
 
 <div class="autonet-hero-section">
     <div class="autonet-background"></div>
@@ -58,7 +54,6 @@
 </div>
 
 <div class="grid-container2">
-    <!-- Zona 1: Recomandări -->
     <div class="item item1 recomandari">
         <div class="recomandare1">
             <div class="recomandare-imagine-container">
@@ -92,7 +87,6 @@
         </div>
     </div>
 
-    <!-- Zona 2: Tabel Evenimente -->
     <div class="item item2">
         <h3>EVENIMENTE ȘI LANSĂRI AUTO</h3>
         <div class="table-container">
@@ -138,7 +132,7 @@
         <h3>Zona 5:</h3><p>lorem</p><p>lorem</p><p>lorem</p>
     </div>
 
-    <!-- Zona 6: Galerie Statică -->
+
     <div class="item item6" id="galerie-statica-ancora">
         <div class="galerie-container">
             <h2>Galerie Statică</h2>
@@ -178,7 +172,6 @@
     <div class="item item7">
         <h3>Zona 7</h3><p>Lorem ipsum dolor sit amet.</p>
     </div>
-    <!-- Zona 8: Blog, Video, Newsletter -->
     <div class="item item8">
         <!-- Blog -->
         <h3 class="section-title">The Journal</h3>
@@ -207,7 +200,7 @@
                     </div>
                 </div>
             </div>
-        </div> <!-- Sfârșit .blog-section -->
+        </div>
 
         <!-- Video Promo -->
         <section class="video-promo-section">
@@ -228,9 +221,9 @@
                     <iframe name="ifr-video" src="https://www.youtube.com/embed/-4zsY28t76k?si=xld5rE0pUPkAtbtk" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
-        </section> <!-- Sfârșit .video-promo-section -->
+        </section>
 
-        <!-- Newsletter -->
+
         <div class="newsletter-section">
             <div class="newsletter-content">
                 <h3>Newsletter Săptămânal de Lux</h3>
@@ -241,14 +234,11 @@
                 <button>Abonează-te</button>
                 <div class="terms-notice">PRIN ÎMPĂRTĂȘIREA EMAILULUI DVS., SUNTEȚI DE ACORD CU TERMENII NOȘTRI DE UTILIZARE ȘI CONFIDENȚIALITATE</div>
             </div>
-        </div> <!-- Sfârșit .newsletter-section -->
-    </div> <!-- Sfârșit .item8 -->
+        </div>
+    </div>
 
-</div> <!-- Sfârșit .grid-container2 -->
+</div>
 
-<!-- ====================================== -->
-<!-- === SFÂRȘIT CONȚINUT SPECIFIC INDEX === -->
-<!-- ====================================== -->
 
 <%- include('../fragmente/footer') %>
 

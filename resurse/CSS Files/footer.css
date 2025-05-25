@@ -135,118 +135,104 @@ footer a:hover::after {
     font-size: 14px;
 }
 
-/* La sfârșitul footer.css */
-
-/* La sfârșitul footer.css */
 
 @media (max-width: 767px) {
 
     footer {
-        /* Asigurăm width 100% (după corecția anterioară) */
         width: 100%;
-        padding: 40px 20px 30px; /* Padding OK pentru mobil */
-        flex-direction: column; /* Stivuim coloanele - Corect */
-        text-align: center; /* Centram textul implicit - Corect */
-        /* Eliminăm overflow: hidden dacă interferează cu ceva */
-        /* overflow: hidden; */
+        padding: 40px 20px 30px;
+        text-align: center;
+
     }
 
-    /* Efectul radial poate fi păstrat sau eliminat */
-    /* footer::before { display: none; } */
-
-    footer > div { /* Se referă la .company-info, .legal-links, .contact-info, .maps-container */
+    footer > div {
         margin-right: 0; /* Corect */
-        margin-bottom: 35px; /* Spațiu între secțiunile stivuite */
+        margin-bottom: 35px;
         flex: 1 1 100%; /* Corect */
-        /* Asigurăm că și conținutul intern e centrat dacă e necesar */
         display: flex;
         flex-direction: column;
-        align-items: center; /* Centrează conținutul intern al div-urilor */
+        align-items: center;
     }
     footer > div:last-child {
         margin-bottom: 0; /* Corect */
     }
 
-    /* Secțiunea Hărți poate necesita ajustări speciale */
+
     .maps-container {
-        gap: 20px; /* Spațiu între cele două hărți */
+        gap: 20px;
     }
     .map-section {
         width: 100%; /* Fiecare secțiune de hartă ocupă lățimea */
     }
     .map-section img, .map-section iframe {
-        max-width: 100%; /* Asigură că hărțile nu depășesc containerul */
-        height: auto; /* Menține proporțiile pentru imagine */
-        /* Poate o înălțime fixă pentru iframe? */
-        /* iframe { height: 250px; } */
+        max-width: 100%;
+        height: auto;
+
     }
 
-    /* Titlurile H3 */
+
     footer h3 {
-        font-size: 14px; /* Mărime OK */
+        font-size: 14px;
         margin-bottom: 15px;
         padding-bottom: 8px;
-        display: inline-block; /* OK pentru centrare ::after */
-        text-align: center; /* Asigură centrarea textului */
+        display: inline-block;
+        text-align: center;
     }
 
     footer h3::after {
         left: 50%; /* OK */
         transform: translateX(-50%); /* OK */
-        width: 35px; /* Ușor mai lată poate? */
+        width: 35px;
         height: 2px;
-        background-color: #888; /* Culoare puțin mai deschisă? */
+        background-color: #888;
     }
 
-    /* Paragrafe și Linkuri */
-    footer p, footer address, footer li { /* Includem și address/li dacă există */
+
+    footer p, footer address, footer li {
         font-size: 13px; /* Mărime OK */
         line-height: 1.7;
         margin-bottom: 10px;
-        max-width: 90%; /* Previne linii prea lungi */
-        margin-left: auto; /* Ajută la centrarea efectivă în flex container */
+        max-width: 90%;
+        margin-left: auto;
         margin-right: auto;
     }
     footer a {
-        font-size: 13px; /* Asigurăm aceeași mărime */
-        color: #999; /* Culoare puțin mai deschisă pentru linkuri? */
+        font-size: 13px;
+        color: #999;
     }
     footer a:hover {
         color: #fff;
     }
-    /* Eliminăm sublinierea animată pe mobil dacă e prea mult */
-    /* footer a::after { display: none; } */
 
-    /* Linkul "Du-te sus" */
+
     .top-link {
-        margin-top: 25px; /* Spațiu mai mare deasupra */
-        width: 100%; /* Ocupă lățimea pt centrare */
+        margin-top: 25px;
+        width: 100%;
         text-align: center;
     }
     .top-link a {
-        display: inline-block; /* OK */
-        padding: 10px 20px; /* Padding mărit puțin */
-        background-color: rgba(255, 255, 255, 0.08); /* Ușor mai vizibil */
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: rgba(255, 255, 255, 0.08);
         border: 1px solid rgba(255, 255, 255, 0.15);
-        color: #ccc; /* Text mai vizibil */
+        color: #ccc;
         font-weight: 500;
     }
 
-    /* Iconițe Sociale */
+
     .social-icons {
-        justify-content: center; /* OK */
+        justify-content: center;
         margin-top: 15px;
-        margin-bottom: 0; /* Eliminăm marginea jos dacă e ultimul element */
+        margin-bottom: 0;
     }
     .social-icons a {
-        width: 34px; /* Mărime OK */
+        width: 34px;
         height: 34px;
     }
 
-    /* Footer Bottom (dacă există separat) */
     .footer-bottom {
         padding-top: 20px;
-        margin-top: 0; /* Reducem spațiul dacă secțiunile au deja margin-bottom */
+        margin-top: 0;
         font-size: 11px;
     }
 }

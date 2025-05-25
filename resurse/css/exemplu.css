@@ -1,10 +1,5 @@
 @charset "UTF-8";
-/* Efect gradient la hover pentru ecran mare */
-/* Stilizare submeniu cu scalare verticală */
-/* Meniu hamburger pentru ecrane mici */
-/* Ecrane medii - text mai mic, icon casă */
-/* Ecrane mici - meniu hamburger */
-/* Efectul de rotație și opacitate pentru submeniu pe mobil */
+
 .premium-menu {
   background-color: #111;
   width: 100%;

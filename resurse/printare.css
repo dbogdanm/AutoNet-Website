@@ -1,11 +1,8 @@
-/* printare.css - Stiluri pentru Printare */
-
 @media print {
 
-    /* === 7. Setări Margini Pagini === */
     @page {
-        margin: 2cm; /* Margine implicită */
-        size: A4; /* Specifică dimensiunea hârtiei (opțional) */
+        margin: 2cm;
+        size: A4;
     }
 
     @page :left {
@@ -18,221 +15,225 @@
         margin-right: 2cm;
     }
 
-    /* === Resetări Generale și Ascunderi === */
     body {
-        font-family: 'Times New Roman', Times, serif; /* Font standard pentru print */
-        font-size: 12pt; /* Mărime font bază */
-        color: black;    /* Asigură text negru */
-        background-color: white !important; /* Fundal alb obligatoriu */
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 12pt;
+        color: black;
+        background-color: white !important;
     }
 
-    /* === 2. Ascunde Elemente Media și Inutile === */
-    header, /* Ascundem headerul principal */
-    nav.premium-menu, /* Ascundem meniul premium (afișăm diferit mai jos) */
-    .autonet-hero-section, /* Ascundem secțiunea hero */
-    img, /* Ascunde toate imaginile */
+    header,
+    nav.premium-menu,
+    .autonet-hero-section,
+    img,
     video,
     iframe,
     figure,
-    svg, /* Ascunde SVG-uri (ex: iconițe, logo-uri) */
-    .search-container, /* Ascunde bara de căutare */
-    .hamburger-menu, /* Ascunde iconul hamburger */
-    .auto-top-button, /* Ascunde butonul "Go Top" */
-    #link-top, /* Alternativ pentru go-top */
-    button, /* Ascunde butoanele standard (ex: din recomandări) */
-    .post-excerpt, /* Ascunde descrierile din blog */
-    #descriereSE, #descriereM, #descriereA, /* Ascunde descrierile din recomandări */
-    .table-caption, /* Ascunde caption-ul tabelului */
-    .newsletter-section, /* Ascunde secțiunea newsletter */
-    .maps-container /* Ascunde secțiunea cu hărți din footer */
+    svg,
+    .search-container,
+    .hamburger-menu,
+    .auto-top-button,
+    #link-top,
+    button,
+    .post-excerpt,
+    #descriereSE, #descriereM, #descriereA,
+    .table-caption,
+    .newsletter-section,
+    .maps-container
     {
         display: none !important;
     }
 
-    /* === 1. Stil Banner (Paragraf din Footer) === */
     #print-banner {
-        display: block !important; /* Asigură afișarea */
-        position: fixed; /* Fixat în colț */
-        top: 1cm; /* Spațiu de sus (în loc de 0 pt a nu se lipi) */
-        right: 1cm; /* Spațiu din dreapta */
-        width: 45%; /* Aproximativ jumătate din zona printabilă (scăzând marginile) */
-        border: 3pt double black; /* Border dublu */
+        display: block !important;
+        position: fixed;
+        top: 1cm;
+        right: 1cm;
+        width: 45%;
+        border: 3pt double black;
         padding: 5mm;
-        background-color: #f8f8f8; /* Un fundal gri deschis */
+        background-color: #f8f8f8;
         font-size: 9pt;
         z-index: 1000;
-        page-break-inside: avoid; /* Încearcă să nu rupă bannerul */
+        page-break-inside: avoid;
     }
 
-    /* === 3. Grid ca Block === */
     .grid-container2 {
         display: block !important;
         width: 100% !important;
-        grid-template-columns: none !important; /* Anulează coloanele grid */
-        grid-template-rows: auto !important;    /* Anulează rândurile grid */
-        grid-gap: 0 !important;                /* Anulează spațiul grid */
-        background-color: transparent !important; /* Fără fundal colorat */
-        padding: 0 !important; /* Fără padding extra */
-        border: none !important; /* Fără borduri */
+        grid-template-columns: none !important;
+        grid-template-rows: auto !important;
+        grid-gap: 0 !important;
+        background-color: transparent !important;
+        padding: 0 !important;
+        border: none !important;
     }
 
     .item, .item1, .item2, .item3, .item4, .item5, .item6, .item7, .item8 {
-        display: block !important; /* Fiecare item devine block */
+        display: block !important;
         width: 100% !important;
-        grid-column: auto !important; /* Resetează plasarea în grid */
-        grid-row: auto !important;    /* Resetează plasarea în grid */
-        margin-bottom: 10mm;         /* Spațiu între itemi */
-        padding: 0 !important; /* Fără padding extra pe itemi */
-        border: none !important; /* Fără borduri pe itemi */
-        background-color: transparent !important; /* Fără fundal colorat */
-        page-break-inside: avoid; /* Încearcă să nu rupă itemii între pagini */
+        grid-column: auto !important;
+        grid-row: auto !important;
+        margin-bottom: 10mm;
+        padding: 0 !important;
+        border: none !important;
+        background-color: transparent !important;
+        page-break-inside: avoid;
     }
-    /* Ascunde conținutul specific din itemi dacă e nevoie */
-    .item1.recomandari { display: none !important; } /* Ascunde secțiunea recomandări */
 
-    /* === 4. Stil Linkuri === */
-    a, a:link, a:visited {
-        color: black !important; /* Culoare neagră */
-        text-decoration: none !important; /* Fără subliniere */
-        font-weight: normal !important; /* Font normal */
+    .item1.recomandari {
+        display: none !important;
     }
-    /* Ascunde pseudo-elementele de pe linkuri */
+
+    a, a:link, a:visited {
+        color: black !important;
+        text-decoration: none !important;
+        font-weight: normal !important;
+    }
+
     a::before, a::after {
         display: none !important;
     }
-    /* Afișează URL-ul după linkuri externe (opțional) */
-    /* a[href^="http"]::after {
-        content: " (" attr(href) ")";
-        font-size: 9pt;
-        color: #555;
-    } */
 
-    /* === 5. Heading 1 și Meniu + Page Breaks === */
     h1#titluSite {
-        display: block !important; /* Asigură afișarea */
+        display: block !important;
         font-size: 22pt !important;
         text-align: center !important;
-        margin: 10mm auto 10mm auto !important; /* Centrare și spațiere */
-        page-break-after: avoid !important; /* Nu rupe pagina imediat după titlu */
+        margin: 10mm auto 10mm auto !important;
+        page-break-after: avoid !important;
         font-weight: bold;
     }
 
-    /* Afișăm meniul premium ca listă simplă */
     nav.premium-menu {
-        display: block !important; /* Îl facem vizibil */
-        background: none !important; /* Fără fundal */
-        box-shadow: none !important; /* Fără umbră */
-        border: none !important; /* Fără borduri */
-        padding: 0 !important; /* Fără padding */
-        margin-bottom: 10mm !important; /* Spațiu sub meniu */
-        page-break-after: always !important; /* Salt la pagină nouă DUPĂ meniu */
-    }
-    nav.premium-menu ul.menu-items {
-        list-style: disc !important; /* Stil listă standard */
-        padding-left: 15mm !important; /* Indentare listă */
-        margin: 0 !important;
-        display: block !important; /* Asigură layout block */
-    }
-    nav.premium-menu li.menu-item {
-        display: list-item !important; /* Afișează ca item de listă */
-        margin-bottom: 5mm !important; /* Spațiu între itemi */
+        display: block !important;
+        background: none !important;
+        box-shadow: none !important;
+        border: none !important;
         padding: 0 !important;
-        text-align: left !important; /* Aliniere stânga */
-        width: auto !important; /* Lățime automată */
+        margin-bottom: 10mm !important;
+        page-break-after: always !important;
+    }
+
+    nav.premium-menu ul.menu-items {
+        list-style: disc !important;
+        padding-left: 15mm !important;
+        margin: 0 !important;
+        display: block !important;
+    }
+
+    nav.premium-menu li.menu-item {
+        display: list-item !important;
+        margin-bottom: 5mm !important;
+        padding: 0 !important;
+        text-align: left !important;
+        width: auto !important;
         border: none !important;
     }
+
     nav.premium-menu li.menu-item a {
-        display: inline !important; /* Linkul ca text inline */
+        display: inline !important;
         padding: 0 !important;
-        font-size: 12pt !important; /* Mărime standard */
-        text-transform: none !important; /* Fără uppercase */
+        font-size: 12pt !important;
+        text-transform: none !important;
         font-weight: normal !important;
         background: none !important;
         text-shadow: none !important;
         border: none !important;
         box-shadow: none !important;
     }
-    nav.premium-menu li.menu-item a span { /* Textul din span */
+
+    nav.premium-menu li.menu-item a span {
         display: inline !important;
     }
+
     nav.premium-menu ul.submenu {
-        display: block !important; /* Afișează submeniul */
-        position: static !important; /* Poziționare normală */
-        transform: none !important; /* Fără transformări */
-        opacity: 1 !important; /* Vizibil */
+        display: block !important;
+        position: static !important;
+        transform: none !important;
+        opacity: 1 !important;
         visibility: visible !important;
-        background: none !important; /* Fără fundal */
-        box-shadow: none !important; /* Fără umbră */
-        border: none !important; /* Fără borduri */
-        padding-left: 10mm !important; /* Indentare suplimentară submeniu */
-        margin-top: 2mm !important; /* Spațiu mic deasupra submeniului */
+        background: none !important;
+        box-shadow: none !important;
+        border: none !important;
+        padding-left: 10mm !important;
+        margin-top: 2mm !important;
         min-width: auto !important;
     }
+
     nav.premium-menu ul.submenu li {
-        margin-bottom: 3mm !important; /* Spațiu între sub-itemi */
+        margin-bottom: 3mm !important;
     }
+
     nav.premium-menu ul.submenu li a {
-        font-size: 11pt !important; /* Font puțin mai mic pt submeniu */
-        padding-left: 0 !important; /* Fără padding extra stânga */
+        font-size: 11pt !important;
+        padding-left: 0 !important;
         border: none !important;
     }
 
-    /* Page break înainte de footer */
     footer {
         page-break-before: always !important;
-        width: 100% !important; /* Asigură lățimea corectă */
-        padding: 1cm !important; /* Padding redus */
-        background: none !important; /* Fără fundal */
-        color: black !important; /* Text negru */
-        border: none !important; /* Fără borduri */
-        display: block !important; /* Afișare ca block */
+        width: 100% !important;
+        padding: 1cm !important;
+        background: none !important;
+        color: black !important;
+        border: none !important;
+        display: block !important;
     }
-    footer::before { display: none !important; } /* Ascunde pseudo-elementul radial */
+
+    footer::before {
+        display: none !important;
+    }
+
     footer > div {
-        display: block !important; /* Secțiunile din footer ca block */
-        text-align: left !important; /* Aliniere stânga */
+        display: block !important;
+        text-align: left !important;
         margin-bottom: 10mm !important;
         padding: 0 !important;
     }
+
     footer h3 {
         color: black !important;
         font-size: 11pt !important;
         font-weight: bold !important;
-        border-bottom: 1px solid black !important; /* Linie simplă sub titlu */
+        border-bottom: 1px solid black !important;
         padding-bottom: 2mm !important;
         margin-bottom: 5mm !important;
         text-align: left !important;
     }
-    footer h3::after { display: none !important; } /* Ascunde linia decorativă */
+
+    footer h3::after {
+        display: none !important;
+    }
+
     footer p, footer address, footer small, footer a {
         font-size: 10pt !important;
         color: black !important;
         text-align: left !important;
         margin-bottom: 3mm !important;
     }
-    footer address p { margin-bottom: 1mm !important; } /* Spațiere mică în adresă */
-    /* Ascunde linkurile inutile din footer */
-    footer .social-icons, footer .top-link { display: none !important; }
 
-
-    /* === 6. Watermark === */
-    body::after {
-        content: "Dinu Bogdan-Marius"; /* <<--- ÎNLOCUIEȘTE CU NUMELE TĂU */
-        /* Pentru nume și prenume pe rânduri separate: */
-        /* content: "Numele Tau\APrenumele Tau"; white-space: pre; */
-        position: fixed;
-        width: 60%;
-        height: 10%; /* Înălțimea e mai puțin relevantă pt text */
-        left: 50%;
-        /* Ajustăm top pentru a nu fi chiar în centru, ci mai jos */
-        top: 85%; /* Poziționat spre baza paginii */
-        transform: translate(-50%, -50%) rotate(-15deg); /* Rotim puțin */
-        z-index: -1; /* În spatele conținutului */
-        color: rgba(100, 100, 100, 0.25); /* Gri foarte deschis, transparent */
-        font-size: 40pt; /* Mărime ajustabilă */
-        font-weight: bold;
-        text-align: center;
-        pointer-events: none; /* Să nu interfereze cu selecția textului */
+    footer address p {
+        margin-bottom: 1mm !important;
     }
 
-} /* Sfârșitul @media print */
+    footer .social-icons, footer .top-link {
+        display: none !important;
+    }
+
+    body::after {
+        content: "Dinu Bogdan-Marius";
+        position: fixed;
+        width: 60%;
+        height: 10%;
+        left: 50%;
+        top: 85%;
+        transform: translate(-50%, -50%) rotate(-15deg);
+        z-index: -1;
+        color: rgba(100, 100, 100, 0.25);
+        font-size: 40pt;
+        font-weight: bold;
+        text-align: center;
+        pointer-events: none;
+    }
+
+}

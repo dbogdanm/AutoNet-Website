@@ -65,7 +65,7 @@ header .hamburger-menu .hamburger-bar:nth-child(3) {
 /* Stiluri stare activă (X) */
 header .hamburger-menu.active .hamburger-bar {
     background-color: #e74c3c;
-    /* Mutăm toate barele în centru pentru rotație */
+
     top: 50%;
     bottom: auto; /* Anulăm bottom pentru siguranță */
     margin-top: -1.5px; /* Offsetul de centrare */

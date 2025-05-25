@@ -1,23 +1,21 @@
-/* resurse/css/efecte.css - CU EFECTE REACTIVATE ȘI ADAPTATE PENTRU VIDEO FUNDAL - REPARAT */
-
 body.body-video-fundal {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    /* background-color: #000; <- Comentat pentru a nu acoperi video-ul */
+    /* background-color: #000; */
     font-family: 'Montserrat', sans-serif;
     color: #ced4da;
     position: relative;
 }
 
-/* Container pentru Video Fundal */
+/* container pt video de fundal */
 .video-fundal-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 1;   /* <<<<<<< MODIFICAT: De la -1 la 1 pentru vizibilitate */
+    z-index: 1;   /* <<modificat de la -1 la 1 pentru vizibliitate */
     overflow: hidden;
 }
 
@@ -40,10 +38,9 @@ body.body-video-fundal {
     width: 100%;
     height: 100%;
     background: linear-gradient(to bottom, rgba(10, 10, 20, 0.4) 0%, rgba(10, 10, 20, 0.8) 100%);
-    z-index: 2; /* <<<<<<< MODIFICAT: Peste video, dar sub conținut */
+    z-index: 2;
 }
 
-/* Header-ul trebuie să fie deasupra tuturor */
 header {
     position: fixed;
     top: 0;
@@ -56,11 +53,11 @@ header {
     box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
-/* Conținutul principal al paginii de efecte */
+
 .pagina-efecte-cu-video {
     position: relative;
-    z-index: 10; /* <<<<<<< MODIFICAT: De la 2 la 10 pentru a fi sigur că e peste video și overlay */
-    padding-top: 80px;  /* Ajustează la înălțimea header-ului tău */
+    z-index: 10;
+    padding-top: 200px;  /* aici se ajusteaza in fct de inaltimea headerului */
     padding-bottom: 60px;
     min-height: 100vh;
     display: flex;
@@ -73,15 +70,14 @@ header {
     margin-left: auto;
     margin-right: auto;
     padding: 1rem;
-    color: white; /* Culoare text default pentru conținutul suprapus */
+    color: white;
     position: relative;
-    z-index: 1; /* Asigură că e peste fundalul .pagina-efecte-cu-video (dacă ar avea unul) */
+    z-index: 1;
 }
 
-/* Stiluri generale pentru titlurile din .content-suprapus-video */
 .content-suprapus-video h1,
-.content-suprapus-video h2.display-5, /* Pentru titlurile mari de secțiune parallax */
-.content-suprapus-video h2.h1 {      /* Pentru titlurile H1-like ale celorlalte secțiuni */
+.content-suprapus-video h2.display-5,
+.content-suprapus-video h2.h1 {
     color: #fff !important;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
     font-family: 'Montserrat', sans-serif;
@@ -98,16 +94,15 @@ header {
     background-color: white;
     color: #000 !important;
 }
-.content-suprapus-video a.btn-primary { /* Butonul "Înapoi la Acasă" */
+.content-suprapus-video a.btn-primary { /*  "Înapoi la Acasă" */
     background-color: var(--bs-primary, #242246);
     border-color: var(--bs-primary, #242246);
     color: white !important;
 }
 
 
-/* --- SECȚIUNE INTRODUCTIVĂ (dacă o ai în EJS) --- */
 .intro-efecte {
-    min-height: calc(80vh - 80px); /* Ajustează 80px la înălțimea header-ului tău */
+    min-height: calc(80vh - 80px);
     padding: 2rem;
     padding-top: 3rem;
     color: #fff;
@@ -120,7 +115,7 @@ header {
 .intro-efecte .lead { text-shadow: 0 0.1rem 0.3rem rgba(0,0,0,0.7); }
 
 
-/* --- STILIZARE HR ÎMBUNĂTĂȚITĂ --- */
+
 .hr-video-fundal,
 .hr-customizat-steluta,
 .hr-customizat-gradient {
@@ -238,7 +233,6 @@ header {
 }
 
 
-/* --- REFLEXIE TEXT CU EFECT DE UNDE DE APĂ --- */
 .efect-reflexie-text {
     display: block;
     padding: 4rem 0;
@@ -293,7 +287,6 @@ header {
     transform: scaleY(-1);
     color: rgba(255, 255, 255, 0.4);
 
-    /* Masca pentru efectul de unde eliptice */
     mask-image:
             repeating-linear-gradient(
                     0deg,
@@ -341,7 +334,6 @@ header {
     mask-composite: intersect;
     -webkit-mask-composite: source-in;
 
-    /* Gradient pentru estomparea reflexiei */
     background: linear-gradient(
             to bottom,
             rgba(255, 255, 255, 0.4) 0%,
@@ -358,7 +350,7 @@ header {
     transition: all 0.3s ease;
 }
 
-/* Efectul de hover pentru animația undelor */
+/* efect de hover pentru animatia undelor */
 .text-cu-reflexie-video:hover::after {
     animation: unde-apa 2s ease-in-out infinite;
     opacity: 0.9;
@@ -373,13 +365,13 @@ header {
 }
 
 
-/* --- TEXT PE COLOANE (DECOMENTAT și adaptat) --- */
+/* --- text pe coloane (DECOMENTAT si adaptat) --- */
 .text-pe-coloane-video {
-    display: block; /* Asigură vizibilitatea */
+    display: block; /* asigur vizibilitate */
     padding: 4rem 0;
     color: #ced4da;
 }
-.text-pe-coloane-video h2.h1 { /* Titlul secțiunii */
+.text-pe-coloane-video h2.h1 { /* titlul sectiunii */
     color: #fff;
     margin-bottom: 3rem;
     font-weight: 300;
@@ -408,7 +400,7 @@ header {
     color: #d8d8d8 !important;
 }
 
-/* Responsive adjustments */
+/* ajustari ecrane mici resposnsive */
 @media (max-width: 992px) {
     .coloane-container-video { column-count: 2; column-gap: 30px; }
     .text-cu-reflexie-video { font-size: clamp(3rem, 12vw, 6rem); }
@@ -424,7 +416,7 @@ header {
     .hr-video-fundal, .hr-customizat-steluta, .hr-customizat-gradient { margin-top: 3rem; margin-bottom: 3rem; }
 }
 
-/* Footer-ul trebuie să fie deasupra tuturor, similar cu header-ul */
+
 footer {
     position: relative;
     z-index: 100;

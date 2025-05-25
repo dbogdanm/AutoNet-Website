@@ -1,27 +1,18 @@
-/* --- START OF FILE main.css --- */
-/* Place this file in the 'resurse' directory */
-
-/* Import order matters for the cascade */
-
-/* 1. Base Styles */
 @import url('CSS Files/base.css');
 
-/* 2. Layout Structure */
+
 @import url('CSS Files/layout.css');
 
-/* 3. Major Page Sections */
 @import url('CSS Files/header.css');
 @import url('CSS Files/footer.css');
 
-/* 4. Components & Specific Content Sections */
 @import url('CSS Files/hero-section.css');
-/* @import url('CSS Files/recommendations.css'); */ /* You don't seem to have this file named recommendations.css */
+
 @import url('CSS Files/table.css');
 @import url('CSS Files/blog.css');
 @import url('CSS Files/newsletter.css');
-@import url('CSS Files/top-button.css'); /* Corrected name from image */
+@import url('CSS Files/top-button.css');
 @import url('CSS Files/maps.css');
 @import url('CSS Files/video-promo.css');
 
 
-/* --- END OF FILE main.css --- */

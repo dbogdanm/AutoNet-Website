@@ -1,11 +1,8 @@
-<!-- views/pagini/despre.ejs -->
 <!doctype html>
 <html lang="ro">
 <head>
     <%- include('../fragmente/head', { titlu: locals.titlu || "Despre Noi" }) %>
-    <!-- Linkul către despre-premium.css este deja în head.ejs -->
     <style>
-        /* Poți păstra stilurile specifice aici sau în despre-premium.css */
         .despre-pagina-container { background-color: #000000; color: #d5d5d5; padding-top: 40px; padding-bottom: 60px; font-family: 'Roboto', sans-serif; }
         .despre-continut-limitat { max-width: 960px; margin: 0 auto; padding: 0 20px; }
         .despre-hero-minimal { padding: 80px 0; text-align: center; background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.95)), url('/resurse/imagini/despre-hero-bg.jpg') no-repeat center center; background-size: cover; border-bottom: 1px solid rgba(255, 255, 255, 0.08); margin-bottom: 60px; }
@@ -23,7 +20,7 @@
         .despre-valori-lista li i { font-size: 1.5em; color: rgba(44, 29, 94, 0.86); margin-top: 3px; width: 30px; text-align: center; }
         .despre-valori-lista li div strong { display: block; font-family: 'Montserrat', sans-serif; font-size: 1.05em; font-weight: 500; color: #e8e8e8; margin-bottom: 4px; }
         .despre-valori-lista li div span { font-size: 0.95em; line-height: 1.6; color: #b5b5b5; }
-        /* Responsive */
+
         @media (max-width: 767px) { .despre-hero-minimal { padding: 50px 0; margin-bottom: 40px; } .despre-hero-minimal h1 { font-size: 2em; letter-spacing: 1px; } .despre-hero-minimal .subtitlu-hero { font-size: 1em; } .despre-continut-limitat { padding: 0 15px; } .despre-sectiune { margin-bottom: 40px; padding-bottom: 25px; } .despre-sectiune h2 { font-size: 1.5em; } .linie-subtitlu { margin-bottom: 20px; } .despre-sectiune p { font-size: 0.95em; line-height: 1.8; } .despre-valori-lista li { margin-bottom: 20px; gap: 12px; } .despre-valori-lista li i { font-size: 1.3em; width: 25px; } .despre-valori-lista li div strong { font-size: 1em; } .despre-valori-lista li div span { font-size: 0.9em; } }
     </style>
 </head>

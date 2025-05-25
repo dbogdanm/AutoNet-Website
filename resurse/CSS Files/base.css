@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap');
 
 :root {
-    --culoare-link-vizitat: #ffffff; /* O nuanță de mov/purpuriu, ajustează după preferințe */
-    --culoare-hover-pata: #e74c3c; /* Roșu accent (sau altă culoare) pentru efectul de pată */
+    --culoare-link-vizitat: #ffffff;
+    --culoare-hover-pata: #e74c3c;
 }
 
 body, html {
@@ -19,19 +19,19 @@ body {
     display: grid;
 }
 
-/* Basic typography defaults */
+
 * {
     font-family: "Montserrat", sans-serif;
 }
 
 a {
-    color: rgba(44, 29, 94, 0.86); /* Culoarea implicită a linkurilor (poate fi alta) */
-    text-decoration: none; /* Eliminăm sublinierea default */
-    transition: color 0.3s ease; /* Tranziție pentru schimbarea culorii (ex: la hover simplu) */
+    color: rgba(44, 29, 94, 0.86);
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 a:visited {
-    color: var(--culoare-link-vizitat); /* Folosim variabila definită */
+    color: var(--culoare-link-vizitat);
 }
 
 a:hover {
