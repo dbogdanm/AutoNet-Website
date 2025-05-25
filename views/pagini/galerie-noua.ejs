@@ -1,0 +1,41 @@
+<!-- views/pagini/galerie-animata.ejs -->
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <%- include('../fragmente/head', { titlu: locals.titlu || "Galerie Animată AutoNet" }) %>
+    <!-- Link către CSS-ul specific galeriei -->
+    <link rel="stylesheet" type="text/css" href="/resurse/css/galerie-noua.css">
+
+    <!-- Stiluri inline specifice acestei pagini, dacă sunt necesare -->
+    <style>
+        /* Stilurile pentru header și footer pentru a asigura vizibilitatea corectă: */
+        header { z-index: 900; position: relative; } /* Asigură-te că header-ul e deasupra galeriei dacă e nevoie */
+        footer { z-index: 900; position: relative; /* background-color: rgba(0,0,0,0.8); */ } /* Fundal pentru footer poate fi controlat și din fragmentul footer.css sau aici dacă e specific paginii */
+        /* Main-ul este acum stilizat extensiv prin galerie-noua.css, inclusiv padding și flex properties */
+    </style>
+</head>
+<body class="pagina-galerie-animata"> <%# Clasa adăugată conform CSS %>
+<%- include('../fragmente/header') %>
+
+<main class="continut-pagina-galerie"> <%# Clasa schimbată conform CSS %>
+    <h1>Galerie Animată</h1>
+    <p class="subtitlu-galerie">Explorează o colecție vibrantă de imagini, prezentate într-un mod dinamic și captivant.</p> <%# Subtitlu adăugat conform CSS %>
+
+    <div id="galerie-animata-container">
+        <div id="galerie-animata">
+            <!-- Mesajul de încărcare poate fi adăugat aici sau direct de JS, CSS-ul are stil pentru .mesaj-incarcare -->
+            <!-- <div class="mesaj-incarcare">Galeria se încarcă...</div> -->
+            <!-- Imaginile vor fi adăugate aici de JavaScript (din /resurse/js/galerie-noua.js) -->
+        </div>
+    </div>
+</main>
+
+<%# HR-urile actualizate pentru a folosi noile clase din galerie-noua.css %>
+<hr class="hr-customizat-steluta">
+
+<%- include('../fragmente/footer') %>
+
+<!-- Scriptul pentru galerie, încărcat la sfârșit -->
+<script src="/resurse/js/galerie-noua.js"></script>
+</body>
+</html>

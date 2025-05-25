@@ -1,4 +1,4 @@
-<!-- views/fragmente/header.ejs (Corectat Final) -->
+<!-- views/fragmente/header.ejs (Actualizat cu noile link-uri) -->
 <header>
     <div class="top-nav">
         <!-- Hamburger Primul Element -->
@@ -20,10 +20,6 @@
                 <input type="text" placeholder="Caută modelul dorit...">
             </div>
         </div>
-
-        <!-- Containerul din dreapta este eliminat, nu mai avem nevoie de el
-             deoarece hamburgerul este acum la începutul .top-nav -->
-
     </div> <!-- Sfârșit .top-nav -->
 
     <!-- Bara de Branduri (Rămâne) -->
@@ -54,37 +50,44 @@
         </p>
     </div>
 
-    <!-- Panoul Meniului Mobil și Overlay (Mutate Aici) -->
+    <!-- Panoul Meniului Mobil și Overlay -->
     <div id="mobile-menu-panel" class="mobile-menu-panel" aria-hidden="true">
         <nav class="mobile-main-navigation">
-            <ul> <!-- !!! CONȚINUTUL ACESTA TREBUIE SĂ FIE AICI !!! -->
+            <ul>
                 <li><a href="/">Acasă</a></li>
+
                 <li class="mobile-menu-dropdown">
-                    <a href="#">Galerii</a> <!-- Sau un link direct dacă ai o pagină de "Galerii" -->
-                    <ul class="mobile-submenu">
-                        <li><a href="/#galerie-statica-ancora">Galerie Statică</a></li> <!-- MODIFICAT AICI -->
-                        <li><a href="#">Galerie Dinamică</a></li>
-                        <li><a href="#">Evenimente Auto</a></li>
-                    </ul>
-                </li>
-                <li class="mobile-menu-dropdown">
-                    <div class="mobile-dropdown-item-wrapper"> <!-- Wrapper nou -->
-                        <a href="/despre">Despre Noi</a> <!-- Linkul principal -->
-                        <button class="submenu-toggle-button" aria-label="Extinde Despre Noi"> <!-- Buton separat pt toggle -->
-                            <i class="fas fa-chevron-down"></i> <!-- Icon săgeată -->
-                        </button>
+                    <div class="mobile-dropdown-item-wrapper">
+                        <a href="#">Prezentări & Galerii</a> <!-- Titlu dropdown mai general -->
+                        <button class="submenu-toggle-button" aria-label="Extinde Prezentări & Galerii"><i class="fas fa-chevron-down"></i></button>
                     </div>
                     <ul class="mobile-submenu">
-                        <li><a href="#">Istoric Companie</a></li>
-                        <li><a href="#">Echipa Noastră</a></li>
-                        <li><a href="#">Valorile Noastre</a></li>
-                        <li><a href="/video-upload">Video prezentări</a></li>
+                        <li><a href="/#galerie-statica-ancora">Galerie Statică (Imagini)</a></li>
+                        <li><a href="/video-upload">Prezentări Video</a></li>
+                        <li><a href="/efecte">Demonstrație Efecte CSS</a></li>
+                        <li><a href="/galerie-noua">Galerie Animație</a></li> <%# LINK NOU ADĂUGAT AICI %>
+                        <%# <li><a href="#">Galerie Dinamică (Viitor)</a></li> %>
+                        <%# <li><a href="#">Evenimente Auto (Viitor)</a></li> %>
                     </ul>
                 </li>
-                <li><a href="#">Vehicule</a></li>
-                <li><a href="#contact">Contact</a></li>
+
+                <li class="mobile-menu-dropdown">
+                    <div class="mobile-dropdown-item-wrapper">
+                        <a href="/despre">Despre Noi</a>
+                        <button class="submenu-toggle-button" aria-label="Extinde Despre Noi"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <ul class="mobile-submenu">
+                        <li><a href="/despre#cine-suntem">Cine Suntem (Ancoră)</a></li> <%# Asigură-te că ai id="cine-suntem" în despre.ejs %>
+                        <li><a href="/despre#viziunea-noastra">Viziunea Noastră (Ancoră)</a></li> <%# Asigură-te că ai id="viziunea-noastra" în despre.ejs %>
+                        <li><a href="/despre#valorile-noastre">Valorile Noastre (Ancoră)</a></li> <%# Asigură-te că ai id="valorile-noastre" în despre.ejs %>
+                    </ul>
+                </li>
+
+                <li><a href="/vehicule">Vehicule</a></li> <%# Presupunând că vei crea /views/pagini/vehicule.ejs %>
+                <li><a href="/#contact">Contact (Ancoră)</a></li> <%# Asigură-te că ai id="contact" în footer sau pe pagina principală %>
+
                 <li class="mobile-menu-separator"><hr style="border-color: rgba(255,255,255,0.1);"></li>
-                <li><a href="#">Sell With Us</a></li>
+                <li><a href="/sell-with-us">Vinde cu Noi</a></li> <%# Presupunând că vei crea /views/pagini/sell-with-us.ejs %>
                 <li><a href="#" id="mobile-login">Log In</a></li>
             </ul>
         </nav>

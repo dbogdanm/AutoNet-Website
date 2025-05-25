@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ro">
+<head>
+    <%- include('../fragmente/head', { titlu: "AutoNet - Experiențe Vizuale" }) %>
+    <link rel="stylesheet" type="text/css" href="/resurse/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/resurse/css/efecte.css">
+    <style>
+        body.body-video-fundal { margin: 0; padding: 0; overflow-x: hidden; }
+        header { z-index: 900; position: relative; }
+        footer { z-index: 900; position: relative; background-color: rgba(0,0,0,0.8); }
+    </style>
+</head>
+<body class="body-video-fundal">
+
+<div class="video-fundal-container">
+    <video autoplay muted loop playsinline id="videoFundalEfecte" poster="/resurse/imagini/fundal-hero-section.jpg">
+        <source src="/resurse/video/Video-Background.webm" type="video/webm">
+        Browserul tău nu suportă tagul video.
+    </video>
+    <div class="video-overlay"></div>
+</div>
+
+<%- include('../fragmente/header') %>
+
+<main class="container-fluid pagina-efecte-cu-video px-0"> <%# container-fluid pentru lățime completă, px-0 pentru a elimina paddingul lateral default %>
+    <div class="content-suprapus-video">
+
+        <!-- Secțiune Introductivă Peste Video -->
+        <section class="intro-efecte text-center d-flex align-items-center justify-content-center" style="min-height: 80vh;">
+            <div>
+                <h1 class="display-2 fw-bolder text-white text-shadow-xl mb-4">Explorați Dinamica AutoNet</h1>
+                <p class="lead fs-3 text-white-75 mb-5 text-shadow-lg" style="max-width: 700px; margin-left: auto; margin-right: auto;">
+                    O incursiune vizuală în tehnologia și designul care definesc experiența AutoNet.
+                </p>
+                <a href="#sectiune-reflexie" class="btn btn-outline-light btn-lg">Descoperă Efectele</a>
+            </div>
+        </section>
+
+        <div class="container"> <%# Container normal pentru conținutul de sub intro %>
+            <hr class="hr-video-fundal my-5">
+
+            <!-- Secțiunea pentru Reflexie Text -->
+            <section id="sectiune-reflexie" class="efect-reflexie-text text-center my-5 py-5">
+                <h2 class="mb-5 display-5 text-white text-shadow-md">Inovație în Fiecare Detaliu</h2>
+                <div class="text-cu-reflexie-video" data-text="Excelență">
+                    Excelență
+                </div>
+                <p class="text-white-75 mt-4 fs-5" style="max-width: 600px; margin: 2rem auto 0 auto;">
+                    Reflectăm pasiunea pentru perfecțiune în fiecare aspect al platformei noastre.
+                </p>
+            </section>
+
+            <hr class="hr-video-fundal my-5">
+
+            <!-- Secțiune pentru text pe coloane -->
+            <section class="text-pe-coloane-video my-5 py-5">
+                <h2 class="text-center mb-5 display-5 text-white text-shadow-md">Perspective Multiple</h2>
+                <div class="coloane-container-video">
+                    <div class="coloana-item">
+                        <h4>Design Avangardist</h4>
+                        <p>Interfața AutoNet este proiectată pentru a oferi o experiență intuitivă și vizual impresionantă, punând în valoare frumusețea fiecărui automobil listat.</p>
+                    </div>
+                    <div class="coloana-item">
+                        <h4>Tehnologie de Vârf</h4>
+                        <p>Utilizăm cele mai noi tehnologii web pentru a asigura performanță, securitate și o navigare fluidă, indiferent de dispozitivul folosit de dumneavoastră.</p>
+                    </div>
+                    <div class="coloana-item">
+                        <h4>Comunitate Exclusivistă</h4>
+                        <p>AutoNet nu este doar o platformă, ci un punct de întâlnire pentru entuziaști și colecționari, facilitând conexiuni valoroase în lumea auto de lux.</p>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="hr-video-fundal my-5">
+
+            <%# Aici poți adăuga alte secțiuni sau efecte dacă dorești %>
+            <div class="text-center py-5">
+                <a href="/" class="btn btn-primary btn-lg">Înapoi la Acasă</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<%- include('../fragmente/footer') %>
+</body>
+</html>

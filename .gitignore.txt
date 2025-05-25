@@ -1,0 +1,28 @@
+# Dependințe Node.js - acestea se instalează cu 'npm install'
+node_modules/
+
+# Folder temporar specific proiectului
+temp/
+
+# Fișiere de log generate de npm
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Fișiere de configurare specifice editorului/IDE-ului (opțional, dar recomandat)
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Fișiere de sistem macOS
+.DS_Store
+
+# Fișiere de thumbnail Windows
+Thumbs.db
+
+# Fișiere de mediu (dacă vei folosi .env pentru variabile de mediu)
+.env
+.env.*
+!.env.example

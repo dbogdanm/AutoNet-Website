@@ -1,0 +1,42 @@
+// resurse/scss/custom.scss
+
+@use "sass:color";
+
+// PASUL 1: Importuri Bootstrap Fundamentale - ORDINEA ESTE CRUCIALĂ
+// Folosim căi relative complete
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/mixins";
+
+// PASUL 2: SUPRASCRIERILE TALE DE VARIABILE
+$primary: #242246;
+$body-bg: #0A0A0A;
+// ... (TOATE celelalte suprascrieri de variabile ale tale,
+//      inclusiv $grid-breakpoints și actualizarea $theme-colors cu map-merge,
+//      și folosirea color.adjust pentru funcțiile de culoare) ...
+$link-color: color.adjust($primary, $lightness: 30%);
+$link-hover-color: color.adjust($link-color, $lightness: 15%);
+$theme-colors: map-merge(
+                $theme-colors,
+                (
+                        "primary": $primary,
+                  // ...
+                )
+);
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 800px,
+        lg: 1050px,
+        xl: 1200px,
+        xxl: 1400px
+);
+// ... etc ...
+
+
+// PASUL 3: Importă restul componentelor Bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap"; // Sau importuri selective
+
+// PASUL 4: Stilurile tale custom suplimentare
+// ...

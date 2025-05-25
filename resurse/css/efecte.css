@@ -1,0 +1,434 @@
+/* resurse/css/efecte.css - CU EFECTE REACTIVATE ȘI ADAPTATE PENTRU VIDEO FUNDAL - REPARAT */
+
+body.body-video-fundal {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    /* background-color: #000; <- Comentat pentru a nu acoperi video-ul */
+    font-family: 'Montserrat', sans-serif;
+    color: #ced4da;
+    position: relative;
+}
+
+/* Container pentru Video Fundal */
+.video-fundal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;   /* <<<<<<< MODIFICAT: De la -1 la 1 pentru vizibilitate */
+    overflow: hidden;
+}
+
+#videoFundalEfecte {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(10, 10, 20, 0.4) 0%, rgba(10, 10, 20, 0.8) 100%);
+    z-index: 2; /* <<<<<<< MODIFICAT: Peste video, dar sub conținut */
+}
+
+/* Header-ul trebuie să fie deasupra tuturor */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: rgba(5, 5, 10, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+/* Conținutul principal al paginii de efecte */
+.pagina-efecte-cu-video {
+    position: relative;
+    z-index: 10; /* <<<<<<< MODIFICAT: De la 2 la 10 pentru a fi sigur că e peste video și overlay */
+    padding-top: 80px;  /* Ajustează la înălțimea header-ului tău */
+    padding-bottom: 60px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-suprapus-video {
+    width: 100%;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+    color: white; /* Culoare text default pentru conținutul suprapus */
+    position: relative;
+    z-index: 1; /* Asigură că e peste fundalul .pagina-efecte-cu-video (dacă ar avea unul) */
+}
+
+/* Stiluri generale pentru titlurile din .content-suprapus-video */
+.content-suprapus-video h1,
+.content-suprapus-video h2.display-5, /* Pentru titlurile mari de secțiune parallax */
+.content-suprapus-video h2.h1 {      /* Pentru titlurile H1-like ale celorlalte secțiuni */
+    color: #fff !important;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+    font-family: 'Montserrat', sans-serif;
+}
+.content-suprapus-video p, .content-suprapus-video li {
+    color: #e0e0e0 !important;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+}
+.content-suprapus-video a.btn-outline-light {
+    border-color: white;
+    color: white !important;
+}
+.content-suprapus-video a.btn-outline-light:hover {
+    background-color: white;
+    color: #000 !important;
+}
+.content-suprapus-video a.btn-primary { /* Butonul "Înapoi la Acasă" */
+    background-color: var(--bs-primary, #242246);
+    border-color: var(--bs-primary, #242246);
+    color: white !important;
+}
+
+
+/* --- SECȚIUNE INTRODUCTIVĂ (dacă o ai în EJS) --- */
+.intro-efecte {
+    min-height: calc(80vh - 80px); /* Ajustează 80px la înălțimea header-ului tău */
+    padding: 2rem;
+    padding-top: 3rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.intro-efecte .display-2 { letter-spacing: -1px; text-shadow: 0 0.15rem 0.5rem rgba(0,0,0,0.6), 0 0 30px rgba(0,0,0,0.4); }
+.intro-efecte .lead { text-shadow: 0 0.1rem 0.3rem rgba(0,0,0,0.7); }
+
+
+/* --- STILIZARE HR ÎMBUNĂTĂȚITĂ --- */
+.hr-video-fundal,
+.hr-customizat-steluta,
+.hr-customizat-gradient {
+    display: block !important;
+    margin: 4rem auto;
+    max-width: 700px;
+    width: 100%;
+    clear: both;
+}
+
+.hr-customizat-steluta {
+    border: 0;
+    height: 2px;
+    background: linear-gradient(to right,
+    transparent 0%,
+    rgba(255,255,255,0.2) 20%,
+    rgba(255,255,255,0.6) 45%,
+    rgba(255,255,255,0.8) 50%,
+    rgba(255,255,255,0.6) 55%,
+    rgba(255,255,255,0.2) 80%,
+    transparent 100%);
+    position: relative;
+    overflow: visible;
+}
+
+.hr-customizat-steluta::before {
+    content: '🚗';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle,
+    rgba(20, 20, 40, 0.95) 0%,
+    rgba(40, 40, 80, 0.9) 50%,
+    rgba(20, 20, 40, 0.95) 100%);
+    padding: 12px 20px;
+    border-radius: 50%;
+    font-size: 2rem;
+    color: #ffffff;
+    text-shadow:
+            0 0 10px rgba(255,255,255,0.5),
+            0 2px 6px rgba(0,0,0,0.8);
+    border: 2px solid rgba(255,255,255,0.3);
+    box-shadow:
+            0 6px 20px rgba(0,0,0,0.6),
+            inset 0 2px 0 rgba(255,255,255,0.2),
+            0 0 30px rgba(100,150,255,0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1;
+}
+
+.hr-customizat-steluta::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle,
+    rgba(100,150,255,0.1) 0%,
+    transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+    animation: pulsare 3s ease-in-out infinite;
+}
+
+@keyframes pulsare {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.1;
+    }
+}
+
+.hr-customizat-gradient {
+    border: 0;
+    height: 6px;
+    background: linear-gradient(to right,
+    transparent 0%,
+    rgba(36, 34, 70, 0.4) 20%,
+    var(--bs-primary, #242246) 50%,
+    rgba(36, 34, 70, 0.4) 80%,
+    transparent 100%);
+    border-radius: 3px;
+    box-shadow:
+            0 2px 8px rgba(0,0,0,0.4),
+            inset 0 1px 0 rgba(255,255,255,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.hr-customizat-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(255,255,255,0.3) 50%,
+    transparent 100%);
+    animation: stralucire 3s ease-in-out infinite;
+}
+
+@keyframes stralucire {
+    0% { left: -100%; }
+    50% { left: 100%; }
+    100% { left: 100%; }
+}
+
+
+/* --- REFLEXIE TEXT CU EFECT DE UNDE DE APĂ --- */
+.efect-reflexie-text {
+    display: block;
+    padding: 4rem 0;
+    text-align: center;
+}
+.efect-reflexie-text h2.h1 {
+    color: #fff;
+    margin-bottom: 3rem;
+    font-weight: 300;
+}
+
+@keyframes unde-apa {
+    0% {
+        mask-position: 0% 0%, 25% 0%, 50% 0%, 75% 0%;
+    }
+    25% {
+        mask-position: 25% 20px, 50% -10px, 75% 15px, 100% -5px;
+    }
+    50% {
+        mask-position: 50% -15px, 75% 25px, 100% -20px, 125% 10px;
+    }
+    75% {
+        mask-position: 75% 10px, 100% -15px, 125% 20px, 150% -25px;
+    }
+    100% {
+        mask-position: 100% 0%, 125% 0%, 150% 0%, 175% 0%;
+    }
+}
+
+.text-cu-reflexie-video {
+    font-size: clamp(3.5rem, 12vw, 7rem);
+    font-weight: 800;
+    color: #FFFFFF;
+    position: relative;
+    display: inline-block;
+    font-family: "Montserrat", sans-serif;
+    line-height: 1;
+    padding-bottom: 1.2em;
+    letter-spacing: -1px;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.text-cu-reflexie-video::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    transform: scaleY(-1);
+    color: rgba(255, 255, 255, 0.4);
+
+    /* Masca pentru efectul de unde eliptice */
+    mask-image:
+            repeating-linear-gradient(
+                    0deg,
+                    transparent 0px,
+                    transparent 8px,
+                    rgba(0,0,0,0.8) 12px,
+                    rgba(0,0,0,0.6) 16px,
+                    rgba(0,0,0,0.4) 20px,
+                    rgba(0,0,0,0.2) 24px,
+                    transparent 28px,
+                    transparent 32px
+            ),
+            repeating-linear-gradient(
+                    90deg,
+                    rgba(0,0,0,0.9) 0px,
+                    rgba(0,0,0,0.7) 15px,
+                    rgba(0,0,0,0.5) 30px,
+                    rgba(0,0,0,0.3) 45px,
+                    rgba(0,0,0,0.1) 60px,
+                    transparent 75px
+            );
+
+
+            repeating-linear-gradient(
+                    0deg,
+                    transparent 0px,
+                    transparent 8px,
+                    rgba(0,0,0,0.8) 12px,
+                    rgba(0,0,0,0.6) 16px,
+                    rgba(0,0,0,0.4) 20px,
+                    rgba(0,0,0,0.2) 24px,
+                    transparent 28px,
+                    transparent 32px
+            ),
+            repeating-linear-gradient(
+                    90deg,
+                    rgba(0,0,0,0.9) 0px,
+                    rgba(0,0,0,0.7) 15px,
+                    rgba(0,0,0,0.5) 30px,
+                    rgba(0,0,0,0.3) 45px,
+                    rgba(0,0,0,0.1) 60px,
+                    transparent 75px
+            );
+
+    mask-composite: intersect;
+    -webkit-mask-composite: source-in;
+
+    /* Gradient pentru estomparea reflexiei */
+    background: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.4) 0%,
+            rgba(255, 255, 255, 0.25) 30%,
+            rgba(255, 255, 255, 0.15) 60%,
+            rgba(255, 255, 255, 0.05) 80%,
+            transparent 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    filter: blur(0.5px);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+/* Efectul de hover pentru animația undelor */
+.text-cu-reflexie-video:hover::after {
+    animation: unde-apa 2s ease-in-out infinite;
+    opacity: 0.9;
+    filter: blur(0.3px);
+}
+
+.text-cu-reflexie-video:hover {
+    text-shadow:
+            0 0 20px rgba(255, 255, 255, 0.6),
+            0 0 40px rgba(255, 255, 255, 0.4),
+            0 0 60px rgba(100, 150, 255, 0.3);
+}
+
+
+/* --- TEXT PE COLOANE (DECOMENTAT și adaptat) --- */
+.text-pe-coloane-video {
+    display: block; /* Asigură vizibilitatea */
+    padding: 4rem 0;
+    color: #ced4da;
+}
+.text-pe-coloane-video h2.h1 { /* Titlul secțiunii */
+    color: #fff;
+    margin-bottom: 3rem;
+    font-weight: 300;
+}
+.coloane-container-video {
+    column-count: 3;
+    column-gap: 40px;
+    column-rule: 1px solid rgba(255,255,255,0.1);
+    text-align: left;
+    line-height: 1.8;
+    padding: 20px;
+    border-radius: 4px;
+}
+.coloane-container-video .coloana-item {
+    break-inside: avoid-column;
+    margin-bottom: 2rem;
+}
+.coloane-container-video h4 {
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    font-family: 'Montserrat', sans-serif;
+}
+.coloane-container-video p {
+    font-size: 0.95rem;
+    color: #d8d8d8 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .coloane-container-video { column-count: 2; column-gap: 30px; }
+    .text-cu-reflexie-video { font-size: clamp(3rem, 12vw, 6rem); }
+}
+@media (max-width: 768px) {
+    .pagina-efecte-cu-video { padding-top: 70px; }
+    .content-suprapus-video h1.display-2, .intro-efecte h1.display-2 { font-size: 2.5rem; }
+    .intro-efecte { min-height: calc(70vh - 70px); }
+
+    .pagina-efecte-cu-video .display-5 { font-size: 2rem; }
+    .coloane-container-video { column-count: 1; column-rule: none; padding: 15px; }
+    .text-cu-reflexie-video { font-size: clamp(2.5rem, 10vw, 4.5rem); padding-bottom: 0.4em;}
+    .hr-video-fundal, .hr-customizat-steluta, .hr-customizat-gradient { margin-top: 3rem; margin-bottom: 3rem; }
+}
+
+/* Footer-ul trebuie să fie deasupra tuturor, similar cu header-ul */
+footer {
+    position: relative;
+    z-index: 100;
+    background-color: rgba(5, 5, 10, 0.9);
+    color: #ced4da;
+    padding: 20px 0;
+}

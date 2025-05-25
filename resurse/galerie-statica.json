@@ -4,55 +4,67 @@
     {
       "fisier": "62s.webp",
       "titlu": "Maybach 62S",
-      "descriere": "Lux și opulență definite de Maybach, un etalon al rafinamentului.",
+      "descriere": "Lux și opulență în viziune Maybach.",
       "timp": "10:00-18:00"
     },
     {
       "fisier": "720s.webp",
       "titlu": "McLaren 720S",
-      "descriere": "Performanță aerodinamică și design spectaculos de la McLaren.",
+      "descriere": "Performanță aerodinamică și design spectaculos.",
       "timp": "09:00-17:00"
     },
     {
       "fisier": "911.webp",
       "titlu": "Porsche 911",
-      "descriere": "Iconicul Porsche 911, o legendă a mașinilor sport.",
+      "descriere": "Iconicul Porsche 911.",
       "timp": "Vizionare liberă"
     },
     {
       "fisier": "bentley.webp",
-      "titlu": "Bentley Continental GT",
-      "descriere": "Eleganță britanică și putere rafinată într-un Grand Tourer de excepție.",
+      "titlu": "Bentley Flying Spur",
+      "descriere": "Eleganță britanică și putere rafinată.",
       "timp": "11:00-16:00"
     },
     {
       "fisier": "db7.webp",
       "titlu": "Aston Martin DB7",
-      "descriere": "Un clasic modern de la Aston Martin, combinând stilul cu performanța.",
+      "descriere": "Un clasic britanic.",
       "timp": "14:00-17:00"
     },
     {
       "fisier": "db9.webp",
       "titlu": "Aston Martin DB9",
-      "descriere": "Continuarea unei linii legendare, DB9 emană putere și sofisticare.",
+      "descriere": "Mașina James Bond.",
       "timp": "10:00-15:00"
     },
     {
       "fisier": "phantom.webp",
       "titlu": "Rolls-Royce Phantom",
-      "descriere": "Apogeul luxului automobilistic, o prezență impunătoare și un confort de neegalat.",
+      "descriere": "Apogeul mașinii moderne.",
+      "timp": "Programare specială"
+    },
+    {
+      "fisier": "458.jpg",
+      "titlu": "Ferrari 458",
+      "descriere": "Clasicul V8 italian",
+      "timp": "Programare specială"
+    },
+    {
+      "fisier": "bugatti.webp",
+      "titlu": "Bugatti Tourbillon",
+      "descriere": "Un șofer, 16 cilindri.",
       "timp": "Programare specială"
     },
     {
       "fisier": "Sklasse.webp",
       "titlu": "Mercedes-Benz S-Class",
-      "descriere": "Inovație, confort și tehnologie de vârf în sedanul de lux de la Mercedes-Benz.",
+      "descriere": "Inovație, confort, tehnologie.",
       "timp": "09:00-18:00"
     },
     {
       "fisier": "urus.webp",
       "titlu": "Lamborghini Urus",
-      "descriere": "Primul Super SUV din lume, combinând ADN-ul Lamborghini cu versatilitatea.",
+      "descriere": "Primul Super SUV din lume.",
       "timp": "10:00-17:00"
     }
   ]
